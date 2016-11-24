@@ -15,8 +15,7 @@ class CreateRestos extends Migration
     {
         Schema::create('restos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps('created');
-            $table->timestamps('modified');
+            $table->timestamps();
             $table->string('name');
             $table->integer('civic#')->unsigned();
             $table->string('street');
