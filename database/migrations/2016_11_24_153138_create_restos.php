@@ -15,14 +15,13 @@ class CreateRestos extends Migration
     {
         Schema::create('restos', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps('created');
-            $table->timestamps('modified');
+            //$table->timestamps('created');
+            $table->timestamps('modified')->nullable();
             $table->string('name');
             $table->integer('civic#')->unsigned();
             $table->string('street');
             $table->string('city');
             $table->string('postal_code');
-            //$table->string('genre');
             $table->string('price');
             $table->decimal('longitude',9,6);
             $table->decimal('latitude',9,6);
