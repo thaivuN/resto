@@ -33,7 +33,7 @@ class UpdateRestosTable extends Migration
     public function down()
     {
         Schema::table('restos', function (Blueprint $table) {
-           $table->integer('civic#')->unsigned();
+           /*$table->integer('civic#')->unsigned();
             $table->string('street');
             $table->string('city');
             $table->string('postal_code');
@@ -41,7 +41,7 @@ class UpdateRestosTable extends Migration
             $table->decimal('longitude',9,6);
             $table->decimal('latitude',9,6);
             $table->dropColumn('email');
-            $table->dropColumn('phone#');
+            $table->dropColumn('phone#');*/
         });
     }
 }
