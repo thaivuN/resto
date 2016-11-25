@@ -15,7 +15,9 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('postal_code');
-           $table->renameColumn('name','username');
+           //$table->renameColumn('name','username');
+            $table->dropColumn('name');
+            $table->string('username');
         });
     }
 
