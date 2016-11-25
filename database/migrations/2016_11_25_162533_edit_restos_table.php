@@ -20,7 +20,7 @@ class EditRestosTable extends Migration
             $table->foreign('user_id')->references('id')
                     ->on('users')->onDelete('cascade');
             $table->foreign('genre_id')->references('id')
-                    ->on('genre')->onDelete('cascade');
+                    ->on('genres')->onDelete('cascade');
             $table->foreign('address_id')->references('id')
                     ->on('addresses')->onDelete('cascade');
         });
