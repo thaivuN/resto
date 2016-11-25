@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/app/User.php</file>
-            <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/resources/views/auth/register.blade.php</file>
             <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/app/Http/Controllers/Auth/LoginController.php</file>
             <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/database/migrations/2014_10_12_000000_create_users_table.php</file>
             <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/app/Http/Controllers/Auth/RegisterController.php</file>
             <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/database/migrations/2014_10_12_100000_create_password_resets_table.php</file>
+            <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/database/migrations/2016_11_24_161208_update_users_table.php</file>
+            <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/database/migrations/2016_11_24_162001_create_address_table.php</file>
+            <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/database/migrations/2016_11_24_153138_create_restos.php</file>
             <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/config/auth.php</file>
-            <file>file:/C:/Dawson/thirdyearCompSci/PHP/PHPCode/Projects/laravel/resto/routes/web.php</file>
         </group>
     </open-files>
 </project-private>
