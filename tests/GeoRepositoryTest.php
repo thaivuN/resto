@@ -8,11 +8,11 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class GeoRepositoryTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Testing with an existing Postal Code
      *
      * @return void
      */
-    public function testValidPostalCode()
+    public function testGeocodingSearchResultsWithValidPostalCode()
     {
         $geoRepo = new GeoRepository();
         $test_address = "H2A 1E9"; 
@@ -22,16 +22,31 @@ class GeoRepositoryTest extends TestCase
         $this->assertArrayHasKey("lattitude", $test_pairs, 'cannot find the lattitude');
     }
     
-    public function testValidAddress(){
+    /**
+     * Testing with a complete address
+     */
+    public function testGeocodingSearchResultsWithValidAddress(){
+        $geoRepo = new GeoRepository();
+        $test_address = "3040 Sherbrooke St. W, Westmount, Quebec"; 
+        $test_pairs = $geoRepo->GetGeocodingSearchResults($test_address);
+        
+        $this->assertArrayHasKey("longitude", $test_pairs, 'cannot find the longitude');
+        $this->assertArrayHasKey("lattitude", $test_pairs, 'cannot find the lattitude');
+    }
+    
+    public function testGeocodingSearchResultsWithAmbiguousAddress(){
         
     }
     
-    public function testAmbiguousAddress(){
+    /**
+     * Testing with something that is not an address
+     * Result should be an empty return
+     */
+    public function testGeocodingSearchResultsWithWrongAddress(){
+        $geoRepo = new GeoRepository();
+        $test_address = "trololo this is not an address";
+        $test_pairs = $geoRepo->GetGeocodingSearchResults($test_address);
         
-    }
-    
-    public function testWrongAddress(){
-        //$geoRepo = new GeoRepository();
-        
+        $this->assertEmpty($test_pairs);
     }
 }
