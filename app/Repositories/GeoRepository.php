@@ -33,7 +33,7 @@ class GeoRepository {
                 $lat = $xpath->query('geometry/location/lat', $geo_results->item(0))->item(0)->nodeValue;
                 $long = $xpath->query('geometry/location/lng', $geo_results->item(0))->item(0)->nodeValue;
                 
-                $pairs['lattitude'] = $lat;
+                $pairs['latitude'] = $lat;
                 $pairs['longitude'] = $long;
                 
                 return $pairs;

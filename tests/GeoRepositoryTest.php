@@ -19,7 +19,7 @@ class GeoRepositoryTest extends TestCase
         $test_pairs = $geoRepo->GetGeocodingSearchResults($test_address);
         
         $this->assertArrayHasKey("longitude", $test_pairs, 'cannot find the longitude');
-        $this->assertArrayHasKey("lattitude", $test_pairs, 'cannot find the lattitude');
+        $this->assertArrayHasKey("latitude", $test_pairs, 'cannot find the lattitude');
     }
     
     /**
