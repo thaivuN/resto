@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Resto;
 use App\Address;
 
 /**
@@ -11,7 +10,7 @@ use App\Address;
  */
 class SearchRepository {
 
-    public function getRestosNear($latitude, $longitude, $radius = 50) {
+    public function getRestoAddressesNear($latitude, $longitude, $radius = 50) {
 
         $addresses = Address::selectRaw('( 6371 * acos( cos( radians(?) ) *
           cos( radians( latitude ) )
@@ -23,11 +22,8 @@ class SearchRepository {
           ->orderBy('distance')
           ->get();
         
-        //Find a way to join to the restos table
         
-
-        
-        return $restos;
+        return $addresses;
     }
 
 }
