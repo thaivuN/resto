@@ -26,4 +26,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /**
+     *  Gets the reviews written by a user.
+     * @return array
+     */
+    public function reviews(){
+        return $this->hasMany('App\Review');
+    }
+    
+    /**
+     * Gets the resto records created by a user.
+     * @return array
+     */
+    public function restos(){
+        return $this->hasMany('App\Resto');
+    }
 }

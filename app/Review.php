@@ -6,5 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    //
+    /**
+     * Gets the user that wrote the review.
+     * @return User
+     */
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    
+    /**
+     * Gets the resto that the review is targetted to.
+     * @return Resto
+     */
+    public function resto(){
+        return $this->belongsTo('App\Resto');
+    }
 }
