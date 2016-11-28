@@ -27,3 +27,7 @@
      </form>
 
 @endsection
+
+@section('js')
+    <script src="/js/geo.js"></script>
+@endsection
