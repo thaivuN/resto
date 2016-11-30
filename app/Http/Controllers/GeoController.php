@@ -102,7 +102,8 @@ class GeoController extends Controller
      * @param Request $request
      */
     public function store(Request $request){
-        
+        $validation = Validator::make($request->all(), ['name' => 'required|max:255', 
+            'phone#' => 'required|max:255']);
     }
     
     
