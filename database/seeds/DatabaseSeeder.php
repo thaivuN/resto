@@ -13,14 +13,14 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call(UsersTableSeeder::class);
         
-        $users=factory(App\User::class,5);
+        factory(App\User::class,5);
         
-        $genres=factory(App\Genre::class,10);
+        factory(App\Genre::class,10);
         
-        $restos=factory(App\Resto::class,15);
+        factory(App\Resto::class,15);
         
-        $addresses=factory(App\Address::class,15);
+        factory(App\Address::class,15);
         
-        $reviews=factory(App\Review::class,50);
+        factory(App\Review::class,50);
     }
 }
