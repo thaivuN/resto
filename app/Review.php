@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    protected $fillable = ['title', 'content', 'rating'];
+    
     /**
      * Gets the user that wrote the review.
      * @return User
