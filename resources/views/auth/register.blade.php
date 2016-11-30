@@ -60,11 +60,17 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Postal Code</label>
+                        <div class="form-group{{ $errors->has('postal_code') ? ' has-error' : '' }}">
+                            <label for="postal_code" class="col-md-4 control-label">Postal Code</label>
 
                             <div class="col-md-6">
-                                <input id="postalCode" type="text" class="form-control" name="postalCode" required>
+                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}" required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('postal_code') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
