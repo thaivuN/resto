@@ -21,8 +21,22 @@ class GeoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->isMethod("post")){
+            $errorcode = $request->input("error");
+            
+            if ($errorcode === 0){
+                $lat = $request->input("latitude");
+                $long = $request->input("longitude");
+            }
+            else{
+                
+            }
+            
+        }
         return view('geo.search');
+
     }
+    
 }
