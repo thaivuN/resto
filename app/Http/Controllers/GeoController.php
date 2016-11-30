@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\GeoRepository;
 use App\Repositories\SearchRepository;
 use Illuminate\Http\Request;
+use Validator;
 
 class GeoController extends Controller
 {
@@ -33,10 +34,9 @@ class GeoController extends Controller
         if($request->isMethod("get")){
             if($request->session()->has("latitude") && $request->session()->has("longitude"))
             {
-                  
+                 
                 $lat = $request->session()->get('latitude');
                 $long = $request->session()->get('longitude');
-                
                 
             }
             else
@@ -76,15 +76,34 @@ class GeoController extends Controller
                 
             }
             
+            
         }
         
-        //$addresses = $this->searcher->getRestoAddressesNear($lat, $long);
-        return view('geo.search');
-        //return view('geo.search', ['addresses' => $addresses,]);
+        $request->session()->put("latitude", $lat);
+        $request->session()->put("longitude", $long);
+        
+        $addresses = $this->searcher->getRestoAddressesNear($lat, $long);
+        //return view('geo.search');
+        return view('geo.search', ['addresses' => $addresses,]);
 
     }
     
+    /**
+     * Directs to the page containing the form for creating a Restorant
+     * 
+     * @param Request $request
+     */
+    public function create(Request $request){
+        
+    }
+    
+    /**
+     * Store the restaurant into the database
+     * @param Request $request
+     */
     public function store(Request $request){
         
     }
+    
+    
 }
