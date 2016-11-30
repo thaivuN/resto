@@ -16,7 +16,7 @@ class EditRestosTable extends Migration
         Schema::table('restos', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->integer('genre_id')->unsigned();
-            $table->integer('address_id')->unsigned();
+           // $table->integer('address_id')->unsigned();
             $table->foreign('user_id')->references('id')
                     ->on('users')->onDelete('cascade');
             $table->foreign('genre_id')->references('id')
