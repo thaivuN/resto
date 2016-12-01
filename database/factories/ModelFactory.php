@@ -43,10 +43,14 @@ $factory->define(App\Review::class,function (Faker\Generator $faker){
 $factory->define(App\Resto::class,function (Faker\Generator $faker){
     return [
         'name'          => $faker->company,
+        'price'         => $faker->numberBetween(1,5),
+        'phone#'        => $faker->phoneNumber,
         'user_id'       =>function(){
             return factory(App\User::class)->create()->id;
+        },
+        'genre_id'      =>function(){
+            return factory(App\Genre::class)->create()->id;
         }
-        
     ];
 });
 
