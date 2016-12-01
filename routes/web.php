@@ -20,5 +20,6 @@ Route::get('/', "HomeController@index");
 Route::get('/home', "HomeController@index");
 Route::get('/geo', "GeoController@index");
 Route::post('/geo', "GeoController@index");
+Route::get('/resto_info','RestoController@index');
 Auth::routes();
 

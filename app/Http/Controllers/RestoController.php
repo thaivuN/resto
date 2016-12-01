@@ -10,10 +10,10 @@ class RestoController extends Controller
         
     }
     
-    public function index($id){
-        $resto=Resto::find($id);
-        $address=Address::find($id);
-        return view('resto.info')->with('resto',$resto)->with('address'
+    public function index(){
+        $resto=Resto::find(1);
+        $address=Address::find(1);
+        return view('resto_info')->with('resto',$resto)->with('address'
                 ,$address);
     }
 }
