@@ -94,7 +94,7 @@ class GeoController extends Controller
      * @param Request $request
      */
     public function create(Request $request){
-        
+        return view ('geo.storeresto');
     }
     
     /**

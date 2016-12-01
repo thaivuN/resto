@@ -21,5 +21,7 @@ Route::get('/home', "HomeController@index");
 Route::get('/geo', "GeoController@index");
 Route::post('/geo', "GeoController@index");
 Route::get('/resto_info','RestoController@index');
+Route::get('/create', "GeoController@create")->middleware('auth');
+Route::post('/store', "GeoController@store")->middleware('auth');
 Auth::routes();
 
