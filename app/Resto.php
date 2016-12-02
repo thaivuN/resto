@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Resto extends Model
 {
     
-    protected $fillable = ['name', 'price', 'phone#', 'email'];
+    protected $fillable = ['name', 'description' , 'price', 'phone#', 'email', 'user_id', 'genre_id'];
+    
     /**
      * Gets all the reviews of the resto.
      * @return array
