@@ -17,7 +17,7 @@ class CreateRestos extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->integer('civic#')->unsigned();
+            $table->integer('civic_num')->unsigned();
             $table->string('street');
             $table->string('city');
             $table->string('postal_code');

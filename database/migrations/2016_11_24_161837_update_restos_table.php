@@ -14,13 +14,13 @@ class UpdateRestosTable extends Migration
     public function up()
     {
         Schema::table('restos', function (Blueprint $table) {
-            $table->dropColumn('civic#');
+            $table->dropColumn('civic_num');
             $table->dropColumn('street');
             $table->dropColumn('city');
             $table->dropColumn('postal_code');
             $table->dropColumn('longitude');
             $table->dropColumn('latitude');
-            $table->string('phone#');
+            $table->string('phone');
             $table->string('email')->nullable();
         });
     }
