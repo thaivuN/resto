@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Resto;
+
 use Illuminate\Http\Request;
 
 class RestoController extends Controller
@@ -12,8 +14,7 @@ class RestoController extends Controller
     
     public function index(){
         $resto=Resto::find(1);
-        $address=Address::find(1);
-        return view('resto_info')->with('resto',$resto)->with('address'
-                ,$address);
+        //$reviews=resto::reviews();
+        return view('geo.resto')->with('resto',$resto);
     }
 }

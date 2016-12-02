@@ -14,7 +14,8 @@ class AddDescInRestosTable extends Migration
     public function up()
     {
         Schema::table('restos', function (Blueprint $table) {
-            $table->string('description');
+            $table->longText('description')->nullable();
+            
         });
     }
 

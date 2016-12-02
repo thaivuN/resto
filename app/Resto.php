@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resto extends Model {
 
-    protected $fillable = ['name', 'description', 'price', 'phone#', 'email', 'user_id', 'genre_id'];
+    protected $fillable = ['name', 'description', 'price', 'phone#', 'email',
+        'civic#', 'street', 'suite', 'city', 'country', 'postal_code', 'user_id', 'genre_id'];
 
     /**
      * Gets all the reviews of the resto.
@@ -32,13 +33,7 @@ class Resto extends Model {
         return $this->belongsTo('App\User');
     }
 
-    /**
-     * Gets all the locations of the resto.
-     * @return array
-     */
-    public function addresses() {
-        return $this->hasMany('App\Address');
-    }
+    
 
     public function userCanEdit(User $user) {
         return $user->id === $this->user_id;

@@ -43,23 +43,34 @@ $factory->define(App\Review::class,function (Faker\Generator $faker){
 $factory->define(App\Resto::class,function (Faker\Generator $faker){
     return [
         'name'          => $faker->company,
+        'description' => $faker->paragraph,
         'price'         => $faker->numberBetween(1,5),
-        'phone#'        => $faker->phoneNumber,
+        'phone'        => $faker->phoneNumber,
         'user_id'       =>function(){
             return factory(App\User::class)->create()->id;
         },
+        'civic_num'       => $faker->buildingNumber,
+        'street'       => $faker->streetName,
+        'suite'        => $faker->numberBetween(1,999),
+        'city'         => $faker->city,
+        'country'      => $faker->country,
+        'postal_code'  => $faker->postcode,
+        'longitude'    => $faker->longitude,
+        'latitude'     => $faker->latitude,
         'genre_id'      =>function(){
             return factory(App\Genre::class)->create()->id;
         }
+        
     ];
 });
 
 /**
  * Generates mock Addresses.
  */
+/**
 $factory->define(App\Address::class,function (Faker\Generator $faker){
     return [
-        'civic#'       => $faker->buildingNumber,
+        'civic_num'       => $faker->buildingNumber,
         'street'       => $faker->streetName,
         'suite'        => $faker->numberBetween(1,999),
         'city'         => $faker->city,
@@ -72,6 +83,7 @@ $factory->define(App\Address::class,function (Faker\Generator $faker){
         }
     ];
 });
+*/
 
 /**
  * Generates mock Genres, will be made of first names.

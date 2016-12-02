@@ -20,7 +20,7 @@ class UpdateRestosTable extends Migration
             $table->dropColumn('postal_code');
             $table->dropColumn('longitude');
             $table->dropColumn('latitude');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('email')->nullable();
         });
     }

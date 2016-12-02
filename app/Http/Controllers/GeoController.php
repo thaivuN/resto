@@ -135,7 +135,7 @@ class GeoController extends Controller
             return redirect('/create')->withInput()->withErrors($extraValidator);
         }
         
-        
+        /**
         $genre = App\Genre::firstOrNew(['genre' => $request->genre]);
         
         $resto = App\Resto::firstOrNew([
@@ -160,13 +160,7 @@ class GeoController extends Controller
             $resto->email = $request->name;
             $resto->phone = $request->phone;
         }
-        
-        if ($address->exists()){
-            
-        }
-        else{
-            //The address is new
-        }
+        */
         
         return view ("home.index");
     }
