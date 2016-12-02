@@ -103,6 +103,8 @@ class GeoController extends Controller
      * @param Request $request
      */
     public function store(Request $request){
+        //Notes: should change description, email and phone to nullable
+        //Therefore can't rely on phone for uniqueness
         
         $this->validate($request, [
             'name' => 'required|max:255',
@@ -138,24 +140,33 @@ class GeoController extends Controller
         
         $resto = App\Resto::firstOrNew([
             'name' => $request->name,
-            'description' => $request->description,
-            'email' => $request->email,
-            'phone' => $request->phone
+            //'email' => $request->email,
+            //'phone' => $request->phone
             
         ]);
         
         $address = App\Address::firstOrNew([
             'civic_num' => $request->civic_num,
+            'street' => $request->street,
             'longitude' => $pairs['longitude'],
             'latitude' => $pairs['latitude']
         ]);
         
-        if(isset($resto->user_id)){
-            //New field
+        if($resto->exists()){
+           
+        }
+        else{
+            //The resto is new
+            $resto->email = $request->name;
+            $resto->phone = $request->phone;
         }
         
-       
-        
+        if ($address->exists()){
+            
+        }
+        else{
+            //The address is new
+        }
         
         return view ("home.index");
     }
