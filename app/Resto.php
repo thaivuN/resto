@@ -22,7 +22,7 @@ class Resto extends Model
      * @return array
      */
     public function genres(){
-        return $this->belongsToMany('App\Genre');
+        return $this->belongsTo('App\Genre');
     }
     
     /**

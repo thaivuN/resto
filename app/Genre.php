@@ -13,6 +13,6 @@ class Genre extends Model
      * @return array
      */
     public function restos(){
-        return $this->belongsToMany('App\Resto');
+        return $this->hasMany('App\Resto');
     }
 }
