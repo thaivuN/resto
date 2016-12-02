@@ -134,6 +134,19 @@ class GeoController extends Controller
             return redirect('/create')->withInput()->withErrors($extraValidator);
         }
         
+        /**
+        $genre = App\Genre::firstOrCreate(['genre' => $request->genre]);
+        
+        $resto = App\Resto::firstOrCreate([
+            'name' => $request->name,
+            'description' => $request->description,
+            'email' => $request->email,
+            'phone#' => $request->get('phone#')
+            
+        ]);
+        
+        */
+        
         
         return view ("home.index");
     }
