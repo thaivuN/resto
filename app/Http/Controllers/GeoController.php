@@ -108,15 +108,14 @@ class GeoController extends Controller
             'name' => 'required|max:255',
             'description' => 'required|max:255',
             'email' => 'required|email|max:255',
-            'phone#' => 'required|max:255',
-            'civic#' =>'required|numeric',
+            'phone' => 'required|max:255',
+            'civic_num' =>'required|numeric',
             'street' => 'required|max:255',
             'suite' => 'present|numeric',
             'city' => 'required|max:255',
             'country' => 'required|max:255',
             'postal_code' => 'required|max:255'
         ]);
-        
         
         $pairs = $this->georepo->GetGeocodingSearchResults($request->get("postal_code"));
         
@@ -134,18 +133,28 @@ class GeoController extends Controller
             return redirect('/create')->withInput()->withErrors($extraValidator);
         }
         
-        /**
-        $genre = App\Genre::firstOrCreate(['genre' => $request->genre]);
         
-        $resto = App\Resto::firstOrCreate([
+        $genre = App\Genre::firstOrNew(['genre' => $request->genre]);
+        
+        $resto = App\Resto::firstOrNew([
             'name' => $request->name,
             'description' => $request->description,
             'email' => $request->email,
-            'phone#' => $request->get('phone#')
+            'phone' => $request->phone
             
         ]);
         
-        */
+        $address = App\Address::firstOrNew([
+            'civic_num' => $request->civic_num,
+            'longitude' => $pairs['longitude'],
+            'latitude' => $pairs['latitude']
+        ]);
+        
+        if(isset($resto->user_id)){
+            //New field
+        }
+        
+       
         
         
         return view ("home.index");
