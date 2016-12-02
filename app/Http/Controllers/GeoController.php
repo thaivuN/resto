@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Repositories\GeoRepository;
 use App\Repositories\SearchRepository;
 use Illuminate\Http\Request;
-use Validator;
+
 
 class GeoController extends Controller
 {
@@ -102,8 +103,37 @@ class GeoController extends Controller
      * @param Request $request
      */
     public function store(Request $request){
-        $validation = Validator::make($request->all(), ['name' => 'required|max:255', 
-            'phone#' => 'required|max:255']);
+        
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'description' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'phone#' => 'required|max:255',
+            'civic#' =>'required|numeric',
+            'street' => 'required|max:255',
+            'suite' => 'present|numeric',
+            'city' => 'required|max:255',
+            'country' => 'required|max:255',
+            'postal_code' => 'required|max:255'
+        ]);
+        
+        
+        $pairs = $this->georepo->GetGeocodingSearchResults($request->get("postal_code"));
+        
+        $extraValidator = Validator::make(
+                [
+                    'latitude' => $pairs['latitude'],
+                    'longitude' => $pairs['longitude']
+                ], 
+                [
+                    'latitude' => 'required|numeric|max:10',
+                    'longitude' => 'required|numeric|max:10'
+                ]);
+        
+        if ($extraValidator->fails()){
+            return redirect('/create')->withInput()->withErrors($extraValidator);
+        }
+        
         
         return view ("home.index");
     }
