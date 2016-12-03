@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use DB;
+use App\Resto;
 
 /**
  * Repository class used to handle restaurant searching 

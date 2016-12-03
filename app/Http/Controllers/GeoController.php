@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use Validator;
 use App\Repositories\GeoRepository;
 use App\Repositories\SearchRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class GeoController extends Controller
@@ -83,9 +85,9 @@ class GeoController extends Controller
         $request->session()->put("latitude", $lat);
         $request->session()->put("longitude", $long);
         
-        $addresses = $this->searcher->getRestoAddressesNear($lat, $long);
+        $restos = $this->searcher->getRestoAddressesNear($lat, $long);
         //return view('geo.search');
-        return view('geo.search', ['addresses' => $addresses,]);
+        return view('geo.search', ['restos' => $restos,]);
 
     }
     
@@ -108,8 +110,9 @@ class GeoController extends Controller
         
         $this->validate($request, [
             'name' => 'required|max:255',
-            'description' => 'required|max:255',
-            'email' => 'required|email|max:255',
+            'description' => 'required|max:5000',
+            'email' => 'present|email|max:255',
+            'price' => 'required|numeric|min:1|max:5',
             'phone' => 'required|max:255',
             'civic_num' =>'required|numeric',
             'street' => 'required|max:255',
@@ -127,42 +130,53 @@ class GeoController extends Controller
                     'longitude' => $pairs['longitude']
                 ], 
                 [
-                    'latitude' => 'required|numeric|max:10',
-                    'longitude' => 'required|numeric|max:10'
+                    'latitude' => 'required|numeric',
+                    'longitude' => 'required|numeric'
                 ]);
         
         if ($extraValidator->fails()){
-            return redirect('/create')->withInput()->withErrors($extraValidator);
+            return redirect('/create')->withInput()->withErrors(['lat_long' => 'The postal code is invalid']);
         }
         
-        /**
-        $genre = App\Genre::firstOrNew(['genre' => $request->genre]);
         
         $resto = App\Resto::firstOrNew([
             'name' => $request->name,
-            //'email' => $request->email,
-            //'phone' => $request->phone
-            
-        ]);
-        
-        $address = App\Address::firstOrNew([
-            'civic_num' => $request->civic_num,
-            'street' => $request->street,
             'longitude' => $pairs['longitude'],
             'latitude' => $pairs['latitude']
         ]);
         
+         
         if($resto->exists()){
-           
+           return redirect()->back()->withInput()->withErrors(['address'=>'The Address already exists']);
         }
         else{
             //The resto is new
-            $resto->email = $request->name;
+            $resto->description = $request->description;
+            $resto->email = $request->email;
             $resto->phone = $request->phone;
-        }
-        */
+            $resto->civic_num = $request->civic_num;
+            $resto->price = $request->price;
+            if (is_numeric($request->suite)){
+                $resto->suite = $request->suite;
+            }
+            $resto->street = $request->street;
+            
         
-        return view ("home.index");
+            $resto->postal_code = $request->postal_code;
+            $resto->city = $request->city;
+            $resto->country = $request->country;
+            
+            $genre = App\Genre::firstOrCreate(['genre' => $request->genre]);
+            
+            $resto->genre_id = $genre->id;
+            $resto->user_id = Auth::id();
+            $resto->save();
+            
+            return view ("home.index");
+        }
+        
+        
+        
     }
     
     
