@@ -12,9 +12,8 @@ class RestoController extends Controller
         
     }
     
-    public function index(){
-        $resto=Resto::find(1);
-        //$reviews=resto::reviews();
+    public function index(Request $request,$id){
+        $resto=Resto::find($id);
         return view('geo.resto')->with('resto',$resto);
     }
 }
