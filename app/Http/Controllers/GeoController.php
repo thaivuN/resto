@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App;
+use DB;
 use Validator;
 use App\Repositories\GeoRepository;
 use App\Repositories\SearchRepository;
@@ -122,7 +123,7 @@ class GeoController extends Controller
             'postal_code' => 'required|max:255'
         ]);
         
-        $pairs = $this->georepo->GetGeocodingSearchResults($request->get("postal_code"));
+        $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
         
         $extraValidator = Validator::make(
                 [
@@ -139,18 +140,23 @@ class GeoController extends Controller
         }
         
         
-        $resto = App\Resto::firstOrNew([
-            'name' => $request->name,
-            'longitude' => $pairs['longitude'],
-            'latitude' => $pairs['latitude']
-        ]);
         
+        $exists = DB::table('restos')->where('name', '=', $request->name)
+                ->where('latitude', '=', $pairs['latitude'])
+                ->where('longitude', '=', $pairs['longitude'])
+                ->count();
          
-        if($resto->exists()){
-           return redirect()->back()->withInput()->withErrors(['address'=>'The Address already exists']);
+        if($exists){
+           return redirect()->back()->withInput()
+                   ->withErrors(['address'=>'The Address already exists','weirdname' => $resto->name, 'weirdlat' => $resto->latitude, 'weirdlng' =>$resto->longitude]);
         }
         else{
             //The resto is new
+            $resto = new App\Resto([
+            'name' => $request->name,
+            'latitude' => $pairs['latitude'],
+            'longitude' =>$pairs['longitude']
+            ]);
             $resto->description = $request->description;
             $resto->email = $request->email;
             $resto->phone = $request->phone;
