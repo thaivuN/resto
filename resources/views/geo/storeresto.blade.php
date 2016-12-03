@@ -6,6 +6,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                @include('common.errors')
+                
                 <div class="panel-heading">Add a restaurant</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/store') }}">
@@ -43,7 +45,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" >
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -53,6 +55,26 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Price</label>
+
+                            <div class="col-md-6">
+                                <select name="price">
+                                    <option value="1">$</option>
+                                    <option value="2">$$</option>
+                                    <option value="3">$$$</option>
+                                    <option value="4">$$$$</option>
+                                    <option value="5">$$$$$</option>
+                                </select>
+
+                                @if ($errors->has('price'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('price') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                             <label for="phone" class="col-md-4 control-label">Telephone Number</label>
 
@@ -149,8 +171,33 @@
                                         <strong>{{ $errors->first('postal_code') }}</strong>
                                     </span>
                                 @endif
+                                @if ($errors->has('lat_long'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('latl_long') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
+                        
+                        <div class="form-group{{ $errors->has('genre') ? ' has-error' : '' }}">
+                            <label for="postal_code" class="col-md-4 control-label">Genre</label>
+
+                            <div class="col-md-6">
+                                <input id="postal_code" type="text" class="form-control" name="genre" value="{{ old('genre') }}" required autofocus>
+
+                                @if ($errors->has('postal_code'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('genre') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
@@ -161,6 +208,8 @@
                             </div>
                         </div>
                     </form>
+                    
+                    
                 </div>
             </div>
         </div>

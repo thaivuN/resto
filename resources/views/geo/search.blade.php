@@ -2,8 +2,58 @@
 
 @section('content')
 
-<h1>Hello</h1>
+@if (count($restos) > 0)
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Near Restaurants
+        </div>
 
-<p>To Do</p>
+        <div class="panel-body">
+            <table class="table table-striped resto-table">
+
+                <!-- Table Headings -->
+                <thead>
+                <th>Restaurant Name</th>
+                <th>Price</th>
+                <th>Postal Code</th>
+                <th>Distance</th>
+                <th>Details</th>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody>
+                @foreach ($restos as $resto)
+                    <tr>
+                        <!-- Resto Name -->
+                        <td class="table-text">
+                            <div>{{ $resto->name }}</div>
+                        </td>
+
+                        <td class="table-text">
+                            <div>
+                                @for($i = 0; $i < $resto->price; $i++)
+                                    {{'$'}}
+                                @endfor
+                            </div>
+                        </td>
+                        <td class="table-text">
+                            <div>{{$resto->postal_code}}</div>
+                        </td>
+                        <td>
+                            <div>{{$resto->distance}}</div>
+                        </td>
+                        <td class="table-text">
+                            
+                        </td>
+                        
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@endif
 
 @endsection
