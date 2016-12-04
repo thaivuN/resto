@@ -29,7 +29,7 @@ class GeoController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Gets the nearby restaurant
      *
      * @return \Illuminate\Http\Response
      */

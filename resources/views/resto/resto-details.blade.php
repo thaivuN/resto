@@ -29,7 +29,19 @@
                 Updated:{{$review->updated_at}}
             @endif
         </td>
-       
+        @if(Auth::check() &&  $review->userCanEdit(Auth::user()))
+        <td>
+            <form action="" method="POST" class="form-horizontal">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+                <button type="submit" id="delete-review-{{ $review->id }}" class="btn btn-danger">
+                    <i class="fa fa-btn fa-trash"></i>Delete
+                </button>
+            </form>
+        </td>
+        @else
+        <td></td>
+        @endif
             
     </tr>
     @endforeach
