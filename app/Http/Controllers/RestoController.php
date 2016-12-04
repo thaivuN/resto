@@ -16,7 +16,8 @@ class RestoController extends Controller
     
     public function index(Request $request,$id){
         $resto=Resto::find($id);
-        return view('resto.resto-details')->with('resto',$resto);
+        $reviews = $resto->reviews()->paginate(5);
+        return view('resto.resto-details')->with('resto',$resto)->with("reviews", $reviews);
     }
     
     public function update(Request $request, $id){

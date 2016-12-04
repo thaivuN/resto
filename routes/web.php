@@ -24,6 +24,7 @@ Route::get('/resto_info/{id}','RestoController@index');
 Route::get('/create', "GeoController@create")->middleware('auth');
 Route::post('/store', "GeoController@store")->middleware('auth');
 Route::get('/resto_update/{id}','RestoController@update')->middleware('auth');
-Route::post('/resto/store}','RestoController@store')->middleware('auth');
+Route::post('/resto/store','RestoController@store')->middleware('auth');
+Route::post('/resto/review/store/{id}', "ReviewController@store")->middleware('auth');
 Auth::routes();
 
