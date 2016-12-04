@@ -129,7 +129,7 @@
                         <div class="col-md-8">{{$review->title}}</div>
                         <div class="col-md-4">
                             @if(Auth::check() &&  $review->userCanEdit(Auth::user()))
-                            <form action="" method="POST" class="form-horizontal">
+                            <form action="{{url('/resto/review/delete/'.$review->id)}}" method="POST" class="form-horizontal">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
                                 <button type="submit" id="delete-review-{{ $review->id }}" class="btn btn-danger">
