@@ -44,10 +44,41 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        
                     </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        
+                        <!-- Dropdown Search -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Search<span class="caret"></span>
+                                </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <form action="/search" method="POST" class="form-horizontal" id="searchForm">
+                                        {{ csrf_field() }}
+                                
+                                    <div >
+                                        <input type="text" name='search'>
+                                    
+                                        <button type="submit" class="btn btn-primary">
+                                            Submit
+                                        </button>
+                                    </div>
+                                
+                            </form>
+                                </li>
+                            </ul>
+                            
+                            
+                        </li>
+                        
+                        
+                        
+                        <li>&nbsp;</li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
