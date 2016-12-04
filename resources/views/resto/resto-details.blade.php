@@ -29,6 +29,7 @@
                 Updated:{{$review->updated_at}}
             @endif
         </td>
+       
             
     </tr>
     @endforeach

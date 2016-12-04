@@ -105,6 +105,9 @@
                                     <li>
                                         <a href="{{url('/create') }}">Add a restaurant</a>
                                     </li>
+                                    <li>
+                                        <a href="{{url('/geo')}}">Find nearby restaurants</a>
+                                    </li>
                                 </ul>
                             </li>
                         @endif
