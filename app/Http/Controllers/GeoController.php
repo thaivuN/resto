@@ -58,18 +58,20 @@ class GeoController extends Controller
                 
                 
             }
-            else if ($errorcode == 6){
+            else if ($errorcode == 6){   
+                $postal = null;
+                try{
                 $postal = $this->georepo->GetGeocodingSearchResults($request->input('postal'));
-                
-                if (is_array($postal) && is_numeric($postal['latitude']) && is_numeric($postal['longitude'])){
-                    //The postal code is valid
-                    
-                    $lat = $postal['latitude'];
-                    $long = $postal['longitude'];
-                    
-                    
                 }
-                else{
+                catch(\ErrorException $e){
+                    //Happens when user put in an empty string.
+                    //Since we do check
+                }
+                
+                $validator = Validator::make(['latitude' => $postal['latitude'], 'longitude' => $postal['longitude']], 
+                ['latitude' => 'required|numeric', 'longitude' => 'required|numeric']);
+                
+                if ($validator->fails()){
                     //The given address/postal code was not good enough
                     //TO DO: Instead of redirecting to home, set default address;
                     
@@ -77,6 +79,8 @@ class GeoController extends Controller
                      
                 }
                 
+                $lat = $postal['latitude'];
+                $long = $postal['longitude'];
                 
             }
             

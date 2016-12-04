@@ -16,11 +16,17 @@
      <form action="/geo" method="POST" class="form-horizontal" id="hiddenForm">
          {{ csrf_field() }}
          <!-- Postal code -->
-         <div class="form-group">
+         <div class="form-group{{ $errors->has('postal') ? ' has-error' : '' }}">
             <label for="postal" class="col-sm-3 control-label">Postal Code</label>
             <div class="col-sm-6">
                <input type="text" name="postal" id="postal" class="form-control" value="{{ old('postal') }}">
+               @if ($errors->has('postal'))
+                  <span class="help-block">
+                           <strong>{{ $errors->first('postal') }}</strong>
+                  </span>
+                @endif
             </div>
+            
          </div>
          <!-- all the hidden fields -->
          <input type="hidden" name="latitude"/>
