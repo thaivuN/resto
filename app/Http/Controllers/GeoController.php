@@ -88,7 +88,7 @@ class GeoController extends Controller
         
         $restos = $this->searcher->getRestoAddressesNear($lat, $long);
         //return view('geo.search');
-        return view('geo.search', ['restos' => $restos,]);
+        return view('geo.nearbyresto', ['restos' => $restos,]);
 
     }
     
