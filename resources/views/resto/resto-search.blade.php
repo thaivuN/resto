@@ -49,6 +49,7 @@
                 @endforeach
                 </tbody>
             </table>
+            {!! $resto->render() !!}
             @else
             <strong>No Results</strong>
             @endif
