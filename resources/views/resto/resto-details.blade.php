@@ -3,6 +3,7 @@
 
 @section('content')
 <h1>{{$resto->name}}</h1>
+<a href="{{url('/resto_update/'.$resto->id)}}">Update</a>
 <h3>description</h3>
 <p>{{$resto->description}}</p>
 <h3>Address</h3>

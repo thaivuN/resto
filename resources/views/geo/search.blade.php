@@ -27,7 +27,7 @@
                     <tr>
                         <!-- Resto Name -->
                         <td class="table-text">
-                            <div>{{ $resto->name }}</div>
+                            <div><a href="{{url('/resto_info/'.$resto->id)}}">{{ $resto->name }}</a></div>
                         </td>
 
                         <td class="table-text">
