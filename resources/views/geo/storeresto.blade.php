@@ -31,7 +31,7 @@
                             <label for="description" class="col-md-4 control-label">Description</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" type="" class="form-control" name="description" value="{{ old('description') }}" required autofocus></textarea>
+                                <textarea id="description" type="" class="form-control" name="description" value="{{ old('description') }}" autofocus></textarea>
 
                                 @if ($errors->has('description'))
                                     <span class="help-block">
@@ -146,6 +146,20 @@
                             </div>
                         </div>
                         
+                        <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
+                            <label for="province" class="col-md-4 control-label">Province</label>
+
+                            <div class="col-md-6">
+                                <input id="province" type="text" class="form-control" name="province" value="{{ old('province') }}" required autofocus>
+
+                                @if ($errors->has('province'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('province') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                             <label for="country" class="col-md-4 control-label">Country</label>
 
@@ -174,6 +188,20 @@
                                 @if ($errors->has('lat_long'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('latl_long') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
+                            <label for="link" class="col-md-4 control-label">Link</label>
+
+                            <div class="col-md-6">
+                                <input id="link" type="text" class="form-control" name="link" value="{{ old('link') }}"  autofocus>
+
+                                @if ($errors->has('link'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('link') }}</strong>
                                     </span>
                                 @endif
                             </div>

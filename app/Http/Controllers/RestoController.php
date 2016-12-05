@@ -43,7 +43,9 @@ class RestoController extends Controller
             'city' => 'required|max:255',
             'country' => 'required|max:255',
             'postal_code' => 'required|max:255',
-            'genre' => 'required|max:255'
+            'genre' => 'required|max:255',
+            'province'=> 'required|max:255',
+            'link' => 'present|url'
         ]);
         
         $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
@@ -78,7 +80,7 @@ class RestoController extends Controller
         $resto->postal_code = $request->postal_code;
         $resto->city = $request->city;
         $resto->country = $request->country;
-        
+        $resto->province = $request->province;
         $genre=Genre::firstOrCreate(['genre'=>$request->genre]);
         $resto->genre_id=$genre->id;
         $resto->save();

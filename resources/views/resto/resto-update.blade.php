@@ -146,6 +146,20 @@
                             </div>
                         </div>
                         
+                         <div class="form-group{{ $errors->has('province') ? ' has-error' : '' }}">
+                            <label for="province" class="col-md-4 control-label">Province</label>
+
+                            <div class="col-md-6">
+                                <input id="province" type="text" class="form-control" name="province" value="{{ $resto->province }}">
+
+                                @if ($errors->has('province'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('province') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
                             <label for="country" class="col-md-4 control-label">Country</label>
 
@@ -179,16 +193,35 @@
                             </div>
                         </div>
                         
-                        <div class="form-group{{ $errors->has('genre') ? ' has-error' : '' }}">
-                            <label for="postal_code" class="col-md-4 control-label">Genre</label>
+                        <div class="form-group{{ $errors->has('postal_code') ? ' has-error' : '' }}">
+                            <label for="postal_code" class="col-md-4 control-label">Postal Code</label>
 
                             <div class="col-md-6">
-                                <input id="genre" type="text" class="form-control" name="genre" value="{{$resto->genre->genre}}">
-                                     
+                                <input id="postal_code" type="text" class="form-control" name="postal_code" value="{{ $resto->postal_code }}">
 
                                 @if ($errors->has('postal_code'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('genre') }}</strong>
+                                        <strong>{{ $errors->first('postal_code') }}</strong>
+                                    </span>
+                                @endif
+                                @if ($errors->has('lat_long'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('latl_long') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
+                            <label for="link" class="col-md-4 control-label">Link</label>
+
+                            <div class="col-md-6">
+                                <input id="link" type="text" class="form-control" name="link" value="{{$resto->genre->link}}">
+                                     
+
+                                @if ($errors->has('link'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('link') }}</strong>
                                     </span>
                                 @endif
                             </div>
