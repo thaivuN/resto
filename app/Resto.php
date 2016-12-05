@@ -21,7 +21,7 @@ class Resto extends Model {
      * Gets all the resto's genre.
      * @return array
      */
-    public function genres() {
+    public function genre() {
         return $this->belongsTo('App\Genre');
     }
 

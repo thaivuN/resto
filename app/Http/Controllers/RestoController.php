@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Resto;
 use App\User;
-
+use Validator;
+use App\Genre;
+use App\Repositories\GeoRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RestoController extends Controller
 {
-    public function __construct(){
-        
+    protected $georepo;
+    public function __construct(GeoRepository $georepo){
+        $this->georepo = $georepo;
     }
     
     public function index(Request $request,$id){
@@ -27,7 +30,7 @@ class RestoController extends Controller
             return view('resto.resto-update')->with('resto',$resto);
     }
     
-    public function store(Request $request){
+    public function save(Request $request, $id){
         $this->validate($request,[
            'name' => 'required|max:255',
             'description' => 'required|max:5000',
@@ -39,8 +42,46 @@ class RestoController extends Controller
             'suite' => 'present|numeric',
             'city' => 'required|max:255',
             'country' => 'required|max:255',
-            'postal_code' => 'required|max:255'
+            'postal_code' => 'required|max:255',
+            'genre' => 'required|max:255'
         ]);
         
+        $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
+        
+        $extraValidator = Validator::make(
+                [
+                    'latitude' => $pairs['latitude'],
+                    'longitude' => $pairs['longitude']
+                ], 
+                [
+                    'latitude' => 'required|numeric',
+                    'longitude' => 'required|numeric'
+                ]);
+        
+        if ($extraValidator->fails()){
+            return redirect()->back()->withInput()->withErrors(['lat_long' => 'The postal code is invalid']);
+        }
+        $resto=Resto::find($id);
+        $resto->latitude=$pairs['latitude'];
+        $resto->longitude=$pairs['longitude'];
+        
+        $resto->name=$request->name;
+        $resto->description=$request->description;
+        $resto->email=$request->email;
+        $resto->phone=$request->phone;
+        $resto->civic_num=$request->civic_num;
+        $resto->price=$request->price;
+        if (is_numeric($request->suite)){
+                $resto->suite = $request->suite;
+            }
+        $resto->street=$request->street;
+        $resto->postal_code = $request->postal_code;
+        $resto->city = $request->city;
+        $resto->country = $request->country;
+        
+        $genre=Genre::firstOrCreate(['genre'=>$request->genre]);
+        $resto->genre_id=$genre->id;
+        $resto->save();
+        return redirect('/resto_info/'.$id);
     }
 }

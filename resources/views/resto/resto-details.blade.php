@@ -14,6 +14,12 @@
     Suite {{$resto->suite}}
     @endif
 </p>
+<h4>Genre</h4>
+<p>{{$resto->genre->genre}}</p>
+<h4>Created at: {{$resto->created_at}}</h4>
+@if($resto->created_at!=$resto->updated_at)
+<h4>Modified at: {{$resto->updated_at}}</h4>
+@endif
 <h3>Reviews</h3>
 
 <!--
