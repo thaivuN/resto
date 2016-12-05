@@ -3,17 +3,22 @@
 
 @section('content')
 <h1>{{$resto->name}}</h1>
-<a href="{{url('/resto_update/'.$resto->id)}}">Update</a>
+@if(Auth::check() && $resto->userCanEdit(Auth::user()))
+    <a href="{{url('/resto_update/'.$resto->id)}}">Update</a>
+@endif
 <h3>description</h3>
 <p>{{$resto->description}}</p>
 <h3>Address</h3>
 <p>{{$resto->civic_num.' '.$resto->street}}
+    , {{$resto->city}}, {{$resto->province}}
     <br/>{{$resto->city.', '.$resto->postal_code}}
     <br/>
     @if(!empty($resto->suite))
     Suite {{$resto->suite}}
     @endif
 </p>
+<h4>Link</h4>
+<a href="{{$resto->link}}">{{$resto->link}}</a>
 <h4>Genre</h4>
 <p>{{$resto->genre->genre}}</p>
 <h4>Created at: {{$resto->created_at}}</h4>
