@@ -172,12 +172,12 @@ class GeoController extends Controller
                 $resto->suite = $request->suite;
             }
             $resto->street = $request->street;
-            
+            $resto->province = $request->province;
         
             $resto->postal_code = $request->postal_code;
             $resto->city = $request->city;
             $resto->country = $request->country;
-            
+            $resto->link = $request->link;
             $genre = App\Genre::firstOrCreate(['genre' => $request->genre]);
             
             $resto->genre_id = $genre->id;

@@ -81,6 +81,7 @@ class RestoController extends Controller
         $resto->city = $request->city;
         $resto->country = $request->country;
         $resto->province = $request->province;
+        $resto->link = $request->link;
         $genre=Genre::firstOrCreate(['genre'=>$request->genre]);
         $resto->genre_id=$genre->id;
         $resto->save();
