@@ -22,9 +22,9 @@ class ApiController extends Controller {
         
         $this->validate($request, ['id' => 'required|numeric']);
         $resto = Resto::find($request->id);
-        if (isset($resto))
+        if (isset($resto)) {
             $reviews = $resto->reviews;
-        else {
+        } else {
             $reviews = [];
         }
         return response()->json($reviews, 200);
