@@ -193,6 +193,20 @@
                             </div>
                         </div>
                         
+                        <div class="form-group{{ $errors->has('genre') ? ' has-error' : '' }}">
+                            <label for="postal_code" class="col-md-4 control-label">Genre</label>
+
+                            <div class="col-md-6">
+                                <input id="postal_code" type="text" class="form-control" name="genre" value="{{ $resto->genre }}" >
+
+                                @if ($errors->has('genre'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('genre') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
                             <label for="link" class="col-md-4 control-label">Link</label>
 

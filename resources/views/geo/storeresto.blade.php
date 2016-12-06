@@ -213,7 +213,7 @@
                             <div class="col-md-6">
                                 <input id="postal_code" type="text" class="form-control" name="genre" value="{{ old('genre') }}" required autofocus>
 
-                                @if ($errors->has('postal_code'))
+                                @if ($errors->has('genre'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('genre') }}</strong>
                                     </span>
