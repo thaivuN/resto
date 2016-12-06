@@ -1,7 +1,6 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.nav_index')
 
-
+@section('page-content')
 <div class="container parent_index">
     <div>
         <h1><span>Foody, </span>we help you find good food.</h1>
@@ -14,9 +13,9 @@
             <div class="input-group col-xs-3 {{ $errors->has('postal') ? ' has-error' : '' }}">
                 <input type="text" name="postal" id="postal" class="form-control index_input input-lg" value="{{ old('postal') }}" maxlength="7" placeholder="Postal Code">
                 @if ($errors->has('postal'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('postal') }}</strong>
-                </span>
+                    <span class="help-block">
+                        <strong>{{ $errors->first('postal') }}</strong>
+                    </span>
                 @endif
 
                 <!-- submit Button -->
@@ -29,8 +28,6 @@
 
             </div>
 
-
-
             <!-- all the hidden fields -->
             <input type="hidden" name="latitude"/>
             <input type="hidden" name="longitude"/>
@@ -38,9 +35,6 @@
         </form>
     </div>
 </div>
-
-
-
 @endsection
 
 @section('js')
