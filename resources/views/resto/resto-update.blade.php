@@ -197,7 +197,7 @@
                             <label for="postal_code" class="col-md-4 control-label">Genre</label>
 
                             <div class="col-md-6">
-                                <input id="postal_code" type="text" class="form-control" name="genre" value="{{ $resto->genre }}" >
+                                <input id="postal_code" type="text" class="form-control" name="genre" value="{{ $resto->genre->genre }}" >
 
                                 @if ($errors->has('genre'))
                                     <span class="help-block">
