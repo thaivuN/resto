@@ -21,8 +21,12 @@ class ApiController extends Controller {
     public function getReviews(Request $request) {
         
         $this->validate($request, ['id' => 'required|numeric']);
-        
-        $reviews = Resto::find($request->id)->reviews;
+        $resto = Resto::find($request->id);
+        if (isset($resto))
+            $reviews = $resto->reviews;
+        else {
+            $reviews = [];
+        }
         return response()->json($reviews, 200);
     }
 
