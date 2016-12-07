@@ -6,7 +6,7 @@
 <div class="container">
 
 @if(count($restos) > 0)
-@foreach($resto as $restos)    
+@foreach($restos as $resto)    
     @if($loop->index % 3 === 0)
         <div class="row"></div>
     @endif
