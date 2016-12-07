@@ -41,7 +41,7 @@
                             <div>{{$resto->postal_code}}</div>
                         </td>
                         <td>
-                            <div>{{$resto->distance}}</div>
+                            <div>{{number_format($resto->distance,1).' KM'}}</div>
                         </td>
                         
                         <td class="table-text">
