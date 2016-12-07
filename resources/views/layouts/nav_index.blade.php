@@ -48,15 +48,20 @@
                     </ul>
                 </li>
                 @endif
+
+                {{-- Search --}}
                 <li>
                     <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
                 </li>
             </ul>
             <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
-                <form class="navbar-form navbar-right" role="search">
+                <form class="navbar-form navbar-right" role="search" action="/search" action="GET">
+                    {{ csrf_field() }}
+
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" />
+                        <input type="text" class="form-control" placeholder="Search"/>
                     </div>
+
                     <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                 </form>
             </div>
