@@ -32,7 +32,7 @@
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
-                        @if($ratings[$resto->id] - $i > 1)
+                        @if($ratings[$resto->id] - $i > 0.5)
                             <i class="glyphicon glyphicon-star"></i>
                         @elseif($ratings[$resto->id] - $i <= 0)
                             <i class="glyphicon glyphicon-star-empty"></i>
