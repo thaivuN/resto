@@ -20,3 +20,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/resto/reviews', "ApiController@getReviews");
 Route::get('/restos', "ApiController@getNearbyRestos");
+//GET for testing purpose
+Route::get("/resto/create", "ApiController@registerResto");
+Route::get("/resto/reviews/create", "ApiController@storeReviews");
+Route::post("/resto/reviews/create", "ApiController@storeReviews");
