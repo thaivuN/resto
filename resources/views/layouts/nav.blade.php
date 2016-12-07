@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 <!-- This header was changed from mouse0270 -->
 <!-- Can be found on: http://bootsnipp.com/snippets/featured/toggle-navbar-with-slide-down-animation -->
