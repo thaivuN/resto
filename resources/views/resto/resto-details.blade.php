@@ -4,21 +4,36 @@
 @section('content')
 <h1>{{$resto->name}}</h1>
 @if(Auth::check() && $resto->userCanEdit(Auth::user()))
-    <a href="{{url('/resto_update/'.$resto->id)}}">Update</a>
+<a href="{{url('/resto_update/'.$resto->id)}}">Update</a>
 @endif
+@for($i = 0; $i < $resto->price; $i++)
+{{'$'}}
+@endfor
 <h3>description</h3>
 <p>{{$resto->description}}</p>
 <h3>Address</h3>
 <p>{{$resto->civic_num.' '.$resto->street}}
     , {{$resto->city}}, {{$resto->province}}
-    <br/>{{$resto->city.', '.$resto->postal_code}}
+    <br/>{{$resto->country.' '.$resto->postal_code}}
     <br/>
     @if(!empty($resto->suite))
     Suite {{$resto->suite}}
     @endif
 </p>
-<h4>Link</h4>
-<a href="{{$resto->link}}">{{$resto->link}}</a>
+
+<h3> Contact us</h3>
+@if(!empty($resto->link))
+<a href="{{$resto->link}}">Link: {{$resto->link}}</a>
+@else
+<p>Link: N/A</p>
+@endif
+<p>Resto email: @if(!empty($resto->resto_email))
+    {{$resto->resto_email}} 
+    @else
+    N/A
+    @endif
+</p>
+<p>Phone: {{$resto->phone}}</p>
 <h4>Genre</h4>
 <p>{{$resto->genre->genre}}</p>
 <h4>Created at: {{$resto->created_at}}</h4>
@@ -26,7 +41,7 @@
 <h4>Modified at: {{$resto->updated_at}}</h4>
 @endif
 
-<p>{{$resto->ratings()}}</p>
+<p>Rating: {{number_format($resto->ratings(),1)}}</p>
 
 <h3>Reviews</h3>
 
@@ -142,15 +157,7 @@
                     <div class="row">
                         <div class="col-md-8">{{$review->title}}</div>
                         <div class="col-md-4">
-                            @if(Auth::check() &&  $review->userCanEdit(Auth::user()))
-                            <form action="{{url('/resto/review/delete/'.$review->id)}}" method="POST" class="form-horizontal">
-                                {{ method_field('DELETE') }}
-                                {{ csrf_field() }}
-                                <button type="submit" id="delete-review-{{ $review->id }}" class="btn btn-danger">
-                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                </button>
-                            </form>
-                            @endif
+                            Rating: {{$review->rating}}
                         </div>
                     </div>
                 </div>
@@ -161,11 +168,7 @@
                     <div class="row">
                         <div class="col-md-8">Author: {{$review->user->name}}</div>
                         <div class="col-md-4">
-                            @if($review->created_at==$review->updated_at)
                             {{$review->created_at}}
-                            @else
-                            Updated: {{$review->updated_at}}
-                            @endif
                         </div>
                     </div>    
                 </div>
