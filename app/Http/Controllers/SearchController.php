@@ -33,6 +33,6 @@ class SearchController extends Controller
         foreach($restos as $resto){
             $ratings[$resto->id] = $this->searcher->getAverageRating($resto);
         }
-        return view('resto.resto-search')->with("restos", $restos);
+        return view('resto.resto-search')->with("restos", $restos)->with("ratings", $ratings);
     }
 }
