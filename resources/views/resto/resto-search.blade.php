@@ -32,9 +32,9 @@
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
-                        @if($ratings[$resto->id] - $1 > 1)
+                        @if($ratings[$resto->id] - $i > 1)
                             <i class="glyphicon glyphicon-star"></i>
-                        @elseif($ratings[$resto->id] - $1 < 0)
+                        @elseif($ratings[$resto->id] - $i < 0)
                             <i class="glyphicon glyphicon-star-empty"></i>
                         @else
                             <i class="glyphicon glyphicon-star half"></i>
@@ -56,7 +56,7 @@
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
-
+{{--
     <div class="panel panel-default">
         <div class="panel-heading">
             Search Results
@@ -109,5 +109,6 @@
             @endif
         </div>
     </div>
+    --}}
 </div>
 @endsection
