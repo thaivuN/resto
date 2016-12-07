@@ -1,4 +1,4 @@
-@extends('layouts.nav_index')
+@extends('layouts.nav')
 
 @section('page-content')
 <div class="container parent_index">
