@@ -30,6 +30,7 @@ class SearchController extends Controller
                 ->select("restos.*")
                 ->paginate(5);
      
+        $ratings = null;
         foreach($restos as $resto){
             $ratings[$resto->id] = $this->searcher->getAverageRating($resto);
         }
