@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.nav')
 
-@section('content')
+@section('page-content')
 
 @if (count($restos) > 0)
 <div class="container">
