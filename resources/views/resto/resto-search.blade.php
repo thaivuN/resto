@@ -11,7 +11,7 @@
         <div class="row"></div>
     @endif
 
-    <div class="panel panel-primary col-md-4 col-xs-12">
+    <div class="panel panel-default col-md-4 col-xs-12">
         <div class="panel-heading"><a href="{{url('/resto_info/'.$resto->id)}}">{{ $resto->name }}</a></div>
         <div class="panel-body">
             {{-- Image --}}
@@ -28,7 +28,7 @@
                     @endfor
                 </li>
 
-                <li>
+                <li class="color-yellow">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
