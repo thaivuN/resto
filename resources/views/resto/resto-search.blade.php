@@ -33,11 +33,12 @@
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
                         @if($ratings[$resto->id] - $i > 1)
-                            <i class="glyphicon glyphicon-star"></i>
+                            <i class="fa fa-star"></i>
                         @elseif($ratings[$resto->id] - $i <= 0)
-                            <i class="glyphicon glyphicon-star-empty"></i>
+                            <i class="fa fa-star-half-o"></i>
                         @else
-                            <i class="glyphicon glyphicon-star half"></i>
+                            {{-- I do not know how to make the star look half full --}}                       
+                            <i class="fa fa-star-half-o"></i>
                         @endif
                     @endfor
                     </div>
