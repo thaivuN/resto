@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#">Foody</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,7 +59,7 @@
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search"/>
+                        <input type="text" class="form-control" placeholder="Search" name="search"/>
                     </div>
 
                     <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
