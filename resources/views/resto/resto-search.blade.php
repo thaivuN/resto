@@ -33,12 +33,12 @@
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
                         @if($ratings[$resto->id] - $i > 1)
-                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
                         @elseif($ratings[$resto->id] - $i <= 0)
-                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
                         @else
                             {{-- I do not know how to make the star look half full --}}                       
-                            <i class="fa fa-star-half-o"></i>
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
                         @endif
                     @endfor
                     </div>

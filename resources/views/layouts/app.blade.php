@@ -18,6 +18,8 @@
             'csrfToken' => csrf_token(),
             ]); ?>
       </script>
+      <script src="https://use.fontawesome.com/d16d023904.js"></script>
+      
    </head>
    <body id="index_body">
       <div>
@@ -27,5 +29,7 @@
       <!-- Scripts -->
       <script src="/js/app.js"></script>
       @yield('js')
+
+
    </body>
 </html>
