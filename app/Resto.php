@@ -39,5 +39,19 @@ class Resto extends Model {
     public function userCanEdit(User $user) {
         return $user->id === $this->user_id;
     }
+    
+    public function ratings(){
+        $count = count($this->reviews);
+        if ($count > 0){
+            $sum = 0;
+            
+            foreach ($this->reviews as $review){
+                $sum = $sum + $review->rating;
+            }
+            return ($sum/$count);
+        }
+        
+        //return $count;
+    }
 
 }

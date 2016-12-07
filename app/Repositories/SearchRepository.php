@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use DB;
 use App\Resto;
+use App\Review;
 
 /**
  * Repository class used to handle restaurant searching 
@@ -26,8 +27,25 @@ class SearchRepository {
                 ->whereRaw("distance < ? ", [$radius])
                 ->orderBy('distance')
                 ->get();
+        
 
         return $restos;
+    }
+    
+    
+    public function getAverageRating($resto){
+        $reviews = Review::where('resto_id', "=" ,$resto->id)->get();
+        $count = count($reviews);
+        if ($count > 0){
+            $sum = 0;
+            
+            foreach ($reviews as $review){
+                $sum += $review->rating;
+            }
+            return ($sum/$count);
+        }
+        
+        
     }
 
 }

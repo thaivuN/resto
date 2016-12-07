@@ -91,8 +91,12 @@ class GeoController extends Controller
         $request->session()->put("longitude", $long);
         
         $restos = $this->searcher->getRestoAddressesNear($lat, $long);
+        foreach($restos as $resto){
+            $ratings[$resto->id] = $this->searcher->getAverageRating($resto);
+        }
         //return view('geo.search');
-        return view('geo.nearbyresto', ['restos' => $restos,]);
+        //return view('geo.nearbyresto', ['restos' => $restos,]);
+        return view('geo.nearbyresto')->with('restos',$restos)->with("ratings",$ratings);
 
     }
     

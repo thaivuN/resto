@@ -25,6 +25,9 @@
 @if($resto->created_at!=$resto->updated_at)
 <h4>Modified at: {{$resto->updated_at}}</h4>
 @endif
+
+<p>{{$resto->ratings()}}</p>
+
 <h3>Reviews</h3>
 
 <!--

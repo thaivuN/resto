@@ -18,7 +18,7 @@
                 <th>Price</th>
                 <th>Postal Code</th>
                 <th>Distance</th>
-                <th>Details</th>
+                <th>Rating</th>
                 </thead>
 
                 <!-- Table Body -->
@@ -43,8 +43,9 @@
                         <td>
                             <div>{{$resto->distance}}</div>
                         </td>
+                        
                         <td class="table-text">
-                            
+                            <div>{{$ratings[$resto->id]}}</div>
                         </td>
                         
                     </tr>

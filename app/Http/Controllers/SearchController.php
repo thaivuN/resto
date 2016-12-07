@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Resto;
 use App\Genre;
+use App\Repositories\SearchRepository;
 
 class SearchController extends Controller
 {
+    protected $searcher;
+    public function __construct(SearchRepository $seacher)
+    {
+        
+        $this->searcher = $seacher;
+    }
     /**
      * Display search results
      *
@@ -23,6 +30,9 @@ class SearchController extends Controller
                 ->select("restos.*")
                 ->paginate(5);
      
+        foreach($restos as $resto){
+            $ratings[$resto->id] = $this->searcher->getAverageRating($resto);
+        }
         return view('resto.resto-search')->with("restos", $restos);
     }
 }
