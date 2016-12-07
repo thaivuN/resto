@@ -21,7 +21,7 @@ Route::get('/home', "HomeController@index");
 Route::get('/geo', "GeoController@index");
 Route::post('/geo', "GeoController@index");
 Route::get('/resto_info/{id}','RestoController@index');
-Route::post('/search','SearchController@index');
+Route::get('/search','SearchController@index');
 Route::get('/create', "GeoController@create")->middleware('auth');
 Route::post('/store', "GeoController@store")->middleware('auth');
 Route::get('/resto_update/{id}','RestoController@update')->middleware('auth');
