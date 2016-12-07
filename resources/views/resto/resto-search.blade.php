@@ -34,7 +34,7 @@
                     @for($i = 0 ; $i < 5 ; $i++)
                         @if($ratings[$resto->id] - $i > 1)
                             <i class="glyphicon glyphicon-star"></i>
-                        @elseif($ratings[$resto->id] - $i < 0)
+                        @elseif($ratings[$resto->id] - $i <= 0)
                             <i class="glyphicon glyphicon-star-empty"></i>
                         @else
                             <i class="glyphicon glyphicon-star half"></i>
