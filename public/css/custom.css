@@ -159,3 +159,7 @@ half:after {
     height: 100%;
     left: 47%;
 }
+
+.add-separator{
+    border-top:1px solid #444;
+}

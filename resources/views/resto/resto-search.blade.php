@@ -20,7 +20,7 @@
         <div class="panel-body">
             {{-- general info --}}
 
-            <ul class="list-inline">
+            <ul class="list-inline add-separator">
                 <li>
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
@@ -35,7 +35,7 @@
                         @if($ratings[$resto->id] - $i > 1)
                             <i class="fa fa-star" aria-hidden="true"></i>
                         @elseif($ratings[$resto->id] - $i <= 0)
-                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
                         @else
                             {{-- I do not know how to make the star look half full --}}                       
                             <i class="fa fa-star-half-o" aria-hidden="true"></i>
