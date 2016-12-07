@@ -58,7 +58,7 @@ class GeoController extends Controller
                 
                 
             }
-            else if ($errorcode == 6){   
+            else{   
                 $postal = null;
                 try{
                 $postal = $this->georepo->GetGeocodingSearchResults($request->input('postal'));
