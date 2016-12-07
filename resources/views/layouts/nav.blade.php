@@ -13,7 +13,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Foody</a>
+            <a class="navbar-brand" href="/">Foody</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -66,6 +66,7 @@
                     <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                 </form>
             </div>
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav><!-- /.navbar -->

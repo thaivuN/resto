@@ -58,7 +58,7 @@ Follow me on Twitter @maridlcrmn
 
 .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
 .navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
-.navbar.navbar-inverse .nav-collapse { background-color: #333; }
+.navbar.navbar-inverse .nav-collapse { background-color: #222; }
 .navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
 .nav-collapse>li { float: right; }
 
@@ -109,3 +109,39 @@ Follow me on Twitter @maridlcrmn
     }
 }
 /* End of taken code*/
+
+.custom-header{
+    border-bottom: 4px solid #FFC172;
+    color:#fff;
+    display:inline-block;
+    padding-left:1%;
+    padding-right:1%;
+    transition: padding-left 1s, padding-right 1s;
+}
+
+.custom-header:hover{
+    padding-left:3%;
+    padding-right:3%;
+}
+
+.custom-form{
+    font-family: 'lato', sans-serif;
+    margin-top: 5%;
+}
+
+.custom input{
+    background: none;
+    border-bottom: 1px solid #909090;
+}
+
+#emailHelp{
+    color:#f0f0f0;
+}
+
+.btn-color-white{
+    color:#fff;
+}
+
+.margin-small{
+    padding-top: 15%;
+}
