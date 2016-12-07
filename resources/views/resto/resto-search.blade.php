@@ -37,6 +37,7 @@
                         @elseif($ratings[$resto->id] - $i <= 0)
                             <i class="glyphicon glyphicon-star-empty"></i>
                         @else
+                            <i class="glyphicon glyphicon-ok"></i>
                             <i class="glyphicon glyphicon-star half"></i>
                         @endif
                     @endfor
