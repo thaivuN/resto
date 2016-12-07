@@ -6,7 +6,7 @@
 <div class="container">
 
 @if(count($restos) > 0)
-    
+@foreach($resto as $restos)    
     @if($loop->index % 3 === 0)
         <div class="row"></div>
     @endif
@@ -53,6 +53,7 @@
         </div>
     @endif
 
+@endforeach
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
