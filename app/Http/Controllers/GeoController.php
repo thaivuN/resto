@@ -36,7 +36,8 @@ class GeoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request) {
-        if ($request->isMethod("get")) {
+        
+        if ($request->isMethod("GET")) {
             if ($request->session()->has("latitude") && $request->session()->has("longitude")) {
                 $lat = $request->session()->get('latitude');
                 $long = $request->session()->get('longitude');
@@ -51,10 +52,10 @@ class GeoController extends Controller {
                     return redirect("/home"); //Go back to the form
                 }
             }
-        } elseif ($request->isMethod("post")) {
+        } elseif ($request->isMethod("POST")) {
             $errorcode = $request->input("error");
 
-            if ($errorcode == 0) {
+            if ($errorcode === 0) {
                 $lat = $request->input("latitude");
                 $long = $request->input("longitude");
             } else {
@@ -88,6 +89,6 @@ class GeoController extends Controller {
 
         return view('geo.nearbyresto')->with('restos', $restos)->with("ratings", $ratings);
     }
-
+    
 
 }
