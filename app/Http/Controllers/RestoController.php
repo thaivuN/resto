@@ -77,7 +77,7 @@ class RestoController extends Controller {
             'longitude' => $pairs['longitude']
         ]);
 
-        $this->fillBasicRestoInfo($resto, $request, $pairs);
+        $this->fillBasicRestoInfo($resto, $request);
         $resto->user_id = Auth::id();
         $resto->save();
 
@@ -113,10 +113,11 @@ class RestoController extends Controller {
         }
         
         $resto = Resto::find($id);
+        $resto->name = $request->name;
         $resto->latitude = $pairs['latitude'];
         $resto->longitude = $pairs['longitude'];
 
-        $this->fillBasicRestoInfo($resto, $request, $pairs);
+        $this->fillBasicRestoInfo($resto, $request);
         $resto->save();
         return redirect('/resto_info/' . $id);
     }
@@ -177,7 +178,7 @@ class RestoController extends Controller {
      * @param Request $request
      * @param array $pairs
      */
-    private function fillBasicRestoInfo(Resto $resto, Request $request, $pairs) {
+    private function fillBasicRestoInfo(Resto $resto, Request $request) {
 
         $resto->description = $request->description;
         $resto->email = $request->email;
