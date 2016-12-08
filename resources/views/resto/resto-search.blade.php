@@ -14,7 +14,7 @@
     <div class="col-md-4 col-xs-12">
     <div class="panel panel-default">
         <a href="{{url('/resto_info/'.$resto->id)}}">
-            <div class="panel-heading text-center">
+            <div class="panel-heading text-center header-custom">
                 {{ $resto->name }}
             </div>
         </a>
