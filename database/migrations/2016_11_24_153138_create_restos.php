@@ -23,8 +23,8 @@ class CreateRestos extends Migration
             $table->string('city');
             $table->string('country');
             $table->string('postal_code');
-            $table->decimal('longitude',10,6);
-            $table->decimal('latitude',10,6);
+            $table->decimal('longitude',11,7);
+            $table->decimal('latitude',11,7);
             $table->decimal('price',2,1);
         });
     }

@@ -75,6 +75,7 @@ class ApiController extends Controller {
     public function registerResto(Request $request) {
 
         $credentials = $request->only('email', 'password');
+       
         $valid = Auth::once($credentials);
         if (!$valid) {
             return response()->json(['error', 'invalid_credentials'], 401);
