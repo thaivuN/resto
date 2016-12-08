@@ -4,7 +4,7 @@
 */
 
 #index_body{
-    background-color:#fff /*#FF6961*/;
+    background-color:#F0F0F0 /*#FF6961*/;
     height:100%;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .btn-warning{
-    background-color: #FFC172;
-    border-color:#F2C071;
+    background-color: #779ECB;
+    border-color:#79A0ED;
 }
 
 .navbar{
