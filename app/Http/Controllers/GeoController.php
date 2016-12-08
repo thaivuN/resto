@@ -130,7 +130,8 @@ class GeoController extends Controller
             'country' => 'required|max:255',
             'postal_code' => 'required|max:255',
             'province'=> 'required|max:255',
-            'link' => 'present|url'
+            'link' => 'present|url',
+            'image_link' => 'present|url'
         ]);
         
         $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);

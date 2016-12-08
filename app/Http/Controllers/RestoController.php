@@ -45,7 +45,8 @@ class RestoController extends Controller
             'postal_code' => 'required|max:255',
             'genre' => 'required|max:255',
             'province'=> 'required|max:255',
-            'link' => 'present|url'
+            'link' => 'present|url',
+            'image_link' => 'present|url'
         ]);
         
         $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);

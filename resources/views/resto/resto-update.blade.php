@@ -222,6 +222,21 @@
                             </div>
                         </div>
                         
+                        <div class="form-group{{ $errors->has('image_link') ? ' has-error' : '' }}">
+                            <label for="image_link" class="col-md-4 control-label">Link For Images</label>
+
+                            <div class="col-md-6">
+                                <input id="image_link" type="text" class="form-control" name="image_link" value="{{$resto->image_link}}">
+                                     
+
+                                @if ($errors->has('image_link'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('image_link') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         @if ($errors->has('address'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>

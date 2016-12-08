@@ -45,7 +45,13 @@
                         </td>
                         
                         <td class="table-text">
-                            <div>{{$ratings[$resto->id]}}</div>
+                            <div>
+                                @if(!empty($ratings[$resto->id]))
+                                    {{$ratings[$resto->id]}}
+                                @else
+                                    N/A
+                                @endif
+                            </div>
                         </td>
                         
                     </tr>

@@ -24,6 +24,7 @@ class UpdateRestosTable extends Migration
             $table->string('email')->nullable();
             $table->string('link')->nullable();
             $table->string('province');
+            $table->string('image_link');
         });
     }
 

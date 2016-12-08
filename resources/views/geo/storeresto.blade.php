@@ -207,6 +207,20 @@
                             </div>
                         </div>
                         
+                        <div class="form-group{{ $errors->has('image_link') ? ' has-error' : '' }}">
+                            <label for="image_link" class="col-md-4 control-label">Link For Images</label>
+
+                            <div class="col-md-6">
+                                <input id="image_link" type="text" class="form-control" name="image_link" value="{{ old('image_link') }}"  autofocus>
+
+                                @if ($errors->has('image_link'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('image_link') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
                         <div class="form-group{{ $errors->has('genre') ? ' has-error' : '' }}">
                             <label for="postal_code" class="col-md-4 control-label">Genre</label>
 

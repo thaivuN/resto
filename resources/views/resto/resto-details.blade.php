@@ -5,6 +5,7 @@
 <h1>{{$resto->name}}</h1>
 @if(Auth::check() && $resto->userCanEdit(Auth::user()))
 <a href="{{url('/resto_update/'.$resto->id)}}">Update</a>
+<br/>
 @endif
 @for($i = 0; $i < $resto->price; $i++)
 {{'$'}}
@@ -21,6 +22,9 @@
     @endif
 </p>
 
+@if(!empty($resto->image_link))
+<p>Visit this page to see photos of the restaurant: {{$resto->image_link}}</p>
+@endif
 <h3> Contact us</h3>
 @if(!empty($resto->link))
 <a href="{{$resto->link}}">Link: {{$resto->link}}</a>
