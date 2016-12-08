@@ -44,15 +44,14 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         @elseif($ratings[$resto->id] - $i <= 0)
                             <i class="fa fa-star-o" aria-hidden="true"></i>
-                        @else
-                            {{-- I do not know how to make the star look half full --}}                       
+                        @else                     
                             <i class="fa fa-star-half-o" aria-hidden="true"></i>
                         @endif
                     @endfor
                     </div>
 
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" style="overflow:hidden;">
                     {{-- Genre --}}
                     {{$resto->genre->genre}}
                 </div>
