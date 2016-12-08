@@ -36,7 +36,7 @@
                     @endfor
                 </div>
 
-                <div class="col-md-6 stars border-right">
+                <div class="col-md-6 stars border-right text-center">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -51,7 +51,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3" style="overflow:hidden;">
+                <div class="col-md-3" style="text-overflow: ellipsis;">
                     {{-- Genre --}}
                     {{$resto->genre->genre}}
                 </div>
