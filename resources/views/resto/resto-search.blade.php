@@ -25,18 +25,18 @@
             </a>
         </div>
 
-        <div class="panel-body separator">
+        <div class="panel-body separator" text-overflow: ellipsis;>
             {{-- general info --}}
 
             
-                <div class="col-md-3 border-right">
+                <div class="col-md-3 border-right" style="margin:0">
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
                 </div>
 
-                <div class="col-md-6 stars border-right text-center">
+                <div class="col-md-6 stars border-right text-center" style="margin:0">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -51,7 +51,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3" style="text-overflow: ellipsis;">
+                <div class="col-md-3" style="margin:0">
                     {{-- Genre --}}
                     {{$resto->genre->genre}}
                 </div>
