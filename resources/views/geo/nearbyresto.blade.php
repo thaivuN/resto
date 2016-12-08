@@ -23,7 +23,7 @@
             {{-- Image --}}
             <a href="{{url('/resto_info/'.$resto->id)}}">
                 @if(empty($resto->image_link))
-                    <img src="/images/bg.jpg">
+                    <img src="/images/bg.jpg" >
                 @else
                     <img src="{{$resto->image_link}}">
                 @endif

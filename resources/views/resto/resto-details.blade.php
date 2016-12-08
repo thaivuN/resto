@@ -19,12 +19,12 @@
     			<h1 class="panel-title">Details</h1>
     		</div>
 
-    		<div class="panel-body image-container">
+    		<div class="panel-body">
             	{{-- Image --}}
                 @if(empty($resto->image_link))
-                    <img src="/images/bg.jpg">
+                    <img src="/images/bg.jpg" width="100%" height="100%;">
                 @else
-                    <img src="{{$resto->image_link}}">
+                    <img src="{{$resto->image_link}}" width="100%" height="100%;">
                 @endif
 
                 <h3>Address</h3>
