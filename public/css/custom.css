@@ -19,6 +19,7 @@
 .parent_index h1{
     color:#222;
     font-size:50px;
+    text-shadow: 2px 2px #000;
 }
 .parent_index h1 span{
     font-weight:bold;
