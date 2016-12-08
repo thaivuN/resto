@@ -69,6 +69,7 @@
     @endif
 
 @endforeach
+{{ $paginator->links('resto.resto-search') }}
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
