@@ -25,18 +25,18 @@
             </a>
         </div>
 
-        <div class="panel-body">
+        <div class="panel-body separator">
             {{-- general info --}}
 
             
-                <div class="col-md-3">
+                <div class="col-md-3 border-right">
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
                 </div>
 
-                <div class="col-md-6 stars">
+                <div class="col-md-6 stars border-right">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)

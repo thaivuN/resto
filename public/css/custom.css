@@ -150,18 +150,10 @@ Follow me on Twitter @maridlcrmn
 .half {
     position:relative;
 }
-half:after {
-    content:'';
-    position:absolute;
-    z-index:1;
-    background:white;
-    width: 50%;
-    height: 100%;
-    left: 47%;
-}
 
-.add-separator{
+.separator{
     border-top:1px solid #444;
+    border-bottom:1px solid #444;
 }
 
 .stars{
@@ -182,4 +174,8 @@ half:after {
 .image-container img{
     max-width: 100%;
     max-height: 100%;
+}
+
+.border-right{
+    border-right: #343434 solid 2px;
 }
