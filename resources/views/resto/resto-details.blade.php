@@ -1,5 +1,7 @@
 @extends('layouts.nav')
 
+@section('page-content')
+
 <div class="container">
 
     <div class="row">       
@@ -12,5 +14,4 @@
 
 </div>
 
-@section('page-content')
 @endsection
