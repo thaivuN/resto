@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-md-3" style="font-size:16px;">
                     {{-- Genre --}}
-                    <p style="max-width: 100%;max-height: 100%">{{$resto->genre->genre}}</p>
+                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;">{{$resto->genre->genre}}</p>
                 </div>
             
         </div>
