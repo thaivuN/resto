@@ -95,9 +95,9 @@ class ApiController extends Controller {
      */
     public function getNearbyRestos(Request $request) {
         $this->validate($request, ['lat' => 'required|numeric', 'long' => 'required|numeric']);
-
-        $restos = $this->searcher->getRestoAddressesNear($request->lat, $request->long);
-
+        
+        $restos = $this->searcher->getTenNearestResto($request->lat, $request->long);
+      
         return response()->json($restos, 200);
     }
 

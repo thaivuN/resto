@@ -13,7 +13,18 @@ use App\Review;
 class SearchRepository {
 
     public function getRestoAddressesNear($latitude, $longitude, $radius = 50) {
+        
+        $restos = $this->buildHarversineQuery($latitude, $longitude, $radius)->get();
 
+        return $restos;
+    }
+    
+    public function getTenNearestResto($latitude, $longitude, $radius = 50){
+        $restos = $this->buildHarversineQuery($latitude, $longitude, $radius)->limit(10)->get();
+        return $restos;
+    }
+    
+    private function buildHarversineQuery($latitude, $longitude, $radius = 50){
         $distances = Resto::select('restos.*')
                 ->selectRaw('( 6371 * acos( cos( radians(?) ) *
             cos( radians( latitude ) )
@@ -22,17 +33,17 @@ class SearchRepository {
             sin( radians(latitude ) ) )
           ) AS distance', [$latitude, $longitude, $latitude]);
 
-        $restos = DB::table(DB::raw("({$distances->toSql()}) as restodistance"))
+        $restosQuery = DB::table(DB::raw("({$distances->toSql()}) as restodistance"))
                 ->mergeBindings($distances->getQuery())
                 ->whereRaw("distance < ? ", [$radius])
-                ->orderBy('distance')
-                ->get();
+                ->orderBy('distance');
         
 
-        return $restos;
+        return $restosQuery;
     }
+
     
-    
+
     public function getAverageRating($resto){
         $reviews = Review::where('resto_id', "=" ,$resto->id)->get();
         $count = count($reviews);
