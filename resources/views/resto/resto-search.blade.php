@@ -14,13 +14,15 @@
     <div class="col-md-4 col-xs-12">
     <div class="panel panel-default">
         <div class="panel-heading"><a href="{{url('/resto_info/'.$resto->id)}}">{{ $resto->name }}</a></div>
-        <div class="panel-body">
+        <div class="panel-body image-container">
             {{-- Image --}}
-            @if(empty($resto->image_link))
-                <img src="/images/bg.jpg">
-            @else
-                <img src="{{$resto->image_link}}">
-            @endif
+            <a href="{{url('/resto_info/'.$resto->id)}}">
+                @if(empty($resto->image_link))
+                    <img src="/images/bg.jpg">
+                @else
+                    <img src="{{$resto->image_link}}">
+                @endif
+            </a>
         </div>
 
         <div class="panel-body">

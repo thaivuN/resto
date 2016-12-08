@@ -172,3 +172,9 @@ half:after {
 .stars:hover{
     color:#FFC172;
 }
+
+.image-container{
+    height:200px;
+    max-height: 200px;
+    max-width: 100%;
+}
