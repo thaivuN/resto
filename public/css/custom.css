@@ -4,7 +4,7 @@
 */
 
 #index_body{
-    background-color:#779ECB /*#FF6961*/;
+    background-color:#F0F0F0 /*#FF6961*/;
     height:100%;
 }
 
@@ -23,7 +23,7 @@
 }
 .parent_index h1 span{
     font-weight:bold;
-    border-bottom: 5px solid #F0F0F0;
+    border-bottom: 5px solid #779ECB;
 }
 
 .index_input{
