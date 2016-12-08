@@ -4,7 +4,7 @@
 */
 
 #index_body{
-    background-color:#F0F0F0 /*#FF6961*/;
+    background-color:#779ECB /*#FF6961*/;
     height:100%;
 }
 
@@ -22,7 +22,7 @@
 }
 .parent_index h1 span{
     font-weight:bold;
-    border-bottom: 5px solid #779ECB;
+    border-bottom: 5px solid #F0F0F0;
 }
 
 .index_input{
@@ -38,6 +38,15 @@
 .btn-warning{
     background-color: #779ECB;
     border-color:#79A0ED;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  color: #222;
+  background-color: #F0F0F0;
+  border-color: #A0A0A0;
 }
 
 .navbar{
