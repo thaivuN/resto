@@ -8,7 +8,7 @@ class Resto extends Model {
 
     protected $fillable = ['name', 'description', 'price', 'phone', 'email',
         'civic_num', 'street', 'suite', 'city', 'price', 'country', 'postal_code',
-        'user_id', 'genre_id', 'longitude', 'latitude','link','province'];
+        'user_id', 'genre_id', 'longitude', 'latitude','link','province', 'image_link'];
 
     /**
      * Gets all the reviews of the resto.

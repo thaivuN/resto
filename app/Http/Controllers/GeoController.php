@@ -178,7 +178,7 @@ class GeoController extends Controller
             }
             $resto->street = $request->street;
             $resto->province = $request->province;
-        
+            $resto->image_link = $request->image_link;
             $resto->postal_code = $request->postal_code;
             $resto->city = $request->city;
             $resto->country = $request->country;

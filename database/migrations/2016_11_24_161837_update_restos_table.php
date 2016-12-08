@@ -22,9 +22,9 @@ class UpdateRestosTable extends Migration
             $table->dropColumn('latitude');*/
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
-            $table->string('link')->nullable();
+            $table->text('link')->nullable();
             $table->string('province');
-            $table->string('image_link');
+            $table->text('image_link')->nullable();
         });
     }
 
