@@ -22,14 +22,14 @@
             {{-- general info --}}
 
             
-                <div class="col-md-4">
+                <div class="col-md-3">
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
                 </div>
 
-                <div class="col-md-4 stars">
+                <div class="col-md-6 stars">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -45,7 +45,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     {{-- Genre --}}
                     {{$resto->genre->genre}}
                 </div>
