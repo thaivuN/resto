@@ -2,7 +2,7 @@
 
 @section('page-content')
 <div class="container parent_index">
-    <div>
+    <div class="col-md-8">
         <h1><span>Foody, </span>we help you find good food.</h1>
 
         <!-- Geolocation -->
@@ -10,7 +10,7 @@
             {{ csrf_field() }}
 
             <!-- Postal code -->
-            <div class="input-group col-xs-3 {{ $errors->has('postal') ? ' has-error' : '' }}">
+            <div class="input-group col-xs-5 {{ $errors->has('postal') ? ' has-error' : '' }}">
                 <input type="text" name="postal" id="postal" class="form-control index_input input-lg" value="{{ old('postal') }}" maxlength="7" placeholder="Postal Code">
                 @if ($errors->has('postal'))
                     <span class="help-block">
@@ -33,6 +33,10 @@
             <input type="hidden" name="longitude"/>
             <input type="hidden" name="error"/>
         </form>
+    </div>
+
+    <div class="col-md-4">
+        <img src="/images/logo_t.png" width="50%" height="50%;">
     </div>
 </div>
 @endsection
