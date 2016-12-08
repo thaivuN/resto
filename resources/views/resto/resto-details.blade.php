@@ -12,6 +12,13 @@
         </div>
     </div>
 
+    <div class="row">
+    	<div class="col-md-6 col-xs-12">
+    		<div class="panel panel-default">
+    			<h3 class="panel-title">Details</h3>
+    		</div>
+    	</div>
+    </div>
 </div>
 
 @endsection
