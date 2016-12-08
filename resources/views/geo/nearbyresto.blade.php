@@ -2,65 +2,87 @@
 
 @section('page-content')
 
-@if (count($restos) > 0)
+
 <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Near Restaurants
+
+@if(count($restos) > 0)
+@foreach($restos as $resto)    
+    @if($loop->index % 3 === 0)
+        <div class="row">
+    @endif
+
+    <div class="col-md-4 col-xs-12">
+    <div class="panel panel-default magnify">
+        {{-- I am sorry for inline css it just does not work normaly--}}
+        <a href="{{url('/resto_info/'.$resto->id)}}" style="text-decoration: none;">
+            <div class="panel-heading text-center header-custom">
+                {{ $resto->name }}
+            </div>
+        </a>
+        <div class="panel-body image-container">
+            {{-- Image --}}
+            <a href="{{url('/resto_info/'.$resto->id)}}">
+                @if(empty($resto->image_link))
+                    <img src="/images/bg.jpg">
+                @else
+                    <img src="{{$resto->image_link}}">
+                @endif
+            </a>
         </div>
 
-        <div class="panel-body">
-            <table class="table table-striped resto-table">
+        <div class="panel-body separator nopadding" text-overflow: ellipsis;>
+            {{-- general info --}}
 
-                <!-- Table Headings -->
-                <thead>
-                <th>Restaurant Name</th>
-                <th>Price</th>
-                <th>Postal Code</th>
-                <th>Distance</th>
-                <th>Rating</th>
-                </thead>
+                <!-- Rating -->
+                <div class="col-md-6 col-xs-12 stars text-center">
+                    {{-- Rating --}}
+                    <div class="rating">
+                    @for($i = 0 ; $i < 5 ; $i++)
+                        @if($ratings[$resto->id] - $i > 1)
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        @elseif($ratings[$resto->id] - $i <= 0)
+                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                        @else                     
+                            <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        @endif
+                    @endfor
+                    </div>
 
-                <!-- Table Body -->
-                <tbody>
-                @foreach ($restos as $resto)
-                    <tr>
-                        <!-- Resto Name -->
-                        <td class="table-text">
-                            <div><a href="{{url('/resto_info/'.$resto->id)}}">{{ $resto->name }}</a></div>
-                        </td>
+                </div>
 
-                        <td class="table-text">
-                            <div>
-                                @for($i = 0; $i < $resto->price; $i++)
-                                    {{'$'}}
-                                @endfor
-                            </div>
-                        </td>
-                        <td class="table-text">
-                            <div>{{$resto->postal_code}}</div>
-                        </td>
-                        <td>
-                            <div>{{number_format($resto->distance,1).' KM'}}</div>
-                        </td>
-                        
-                        <td class="table-text">
-                            <div>
-                                @if(!empty($ratings[$resto->id]))
-                                    {{$ratings[$resto->id]}}
-                                @else
-                                    N/A
-                                @endif
-                            </div>
-                        </td>
-                        
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+                <!-- Genre -->
+                <div class="col-md-4 col-xs-12 text-center">
+                    {{-- Genre --}}
+                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;">{{$resto->genre->genre}}</p>
+                </div>
+
+                <!-- Pricing -->
+                <div class="col-md-2 col-xs-12 text-center" >
+                    {{-- Pricing --}}
+                    @for($i = 0; $i < $resto->price; $i++)
+                        {{'$'}}
+                    @endfor
+                </div>
+            
+        </div>
+
+        <div class="panel-footer text-center">
+            <p>{{$resto->civic_num.", ".$resto->street}}</p>
         </div>
     </div>
-</div>
-@endif
+    </div>
 
+    @if($loop->index % 3 === 2 || $loop->last)
+        </div>
+    @endif
+
+@endforeach
+{{-- Pagination --}}
+<div class="row text-center">
+    {!! $restos->render() !!}
+</div>
+@else
+    <strong>We're sorry, we do not have any restos for you.</strong>
+@endif
+</div>
 @endsection

@@ -190,3 +190,20 @@ Follow me on Twitter @maridlcrmn
 .magnify:hover > a > div{
     background-color: #ABCDEF;
 }
+
+/* Resto details css */
+
+.resto-name{
+    border-bottom: 4px solid #FFC172;
+    color:#fff;
+    display:inline-block;
+    font-size: 50px;
+    padding-left:1%;
+    padding-right:1%;
+    transition: padding-left 1s, padding-right 1s;
+}
+
+.resto-name:hover{
+    padding-left:3%;
+    padding-right:3%;
+}
