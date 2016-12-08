@@ -29,14 +29,14 @@
             {{-- general info --}}
 
             
-                <div class="col-md-3 border-right col-xs-12" style="margin:0">
+                <div class="col-md-3 col-xs-12 text-center" style="margin:0">
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
                 </div>
 
-                <div class="col-md-6 col-xs-12 stars border-right text-center" style="margin:0">
+                <div class="col-md-6 col-xs-12 stars text-center" style="margin:0">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -51,9 +51,9 @@
                     </div>
 
                 </div>
-                <div class="col-md-3 col-xs-12" style="font-size:16px;">
+                <div class="col-md-3 col-xs-12 text-center" style="font-size:16px;">
                     {{-- Genre --}}
-                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;">{{$resto->genre->genre}}</p>
+                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;">{{$resto->genre->genre}}</p>
                 </div>
             
         </div>
