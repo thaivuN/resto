@@ -29,7 +29,7 @@
             {{-- general info --}}
 
             
-                <div class="col-md-3 col-xs-12 text-center" style="margin:0">
+                <div class="col-md-3 col-xs-12 text-center" style="background-color: #b4d455;">
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-md-3 col-xs-12 text-center" style="font-size:16px;">
                     {{-- Genre --}}
-                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;">{{$resto->genre->genre}}</p>
+                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;">{{$resto->genre->genre}}</p>
                 </div>
             
         </div>
