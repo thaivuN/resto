@@ -20,7 +20,7 @@
 
                 <!-- submit Button -->
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-warning btn-lg">
+                    <button type="submit" class="btn btn-primary btn-lg">
                         Start
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button>
