@@ -51,7 +51,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3" style="margin:0">
+                <div class="col-md-3" style="margin:0;text-overflow: ellipsis;">
                     {{-- Genre --}}
                     {{$resto->genre->genre}}
                 </div>
