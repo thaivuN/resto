@@ -25,3 +25,6 @@ Route::get("/resto/create", "ApiController@registerResto");
 Route::get("/resto/reviews/create", "ApiController@storeReviews");
 Route::post("/resto/reviews/create", "ApiController@storeReviews");
 Route::post("/resto/create", "ApiController@registerResto");
+
+//Extra route at the request of the android team
+Route::get("resto/details", "ApiController@getRestoDetails");

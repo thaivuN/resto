@@ -37,6 +37,13 @@ class ApiController extends Controller {
         }
         return response()->json($reviews, 200);
     }
+    
+    public function getRestoDetails(Request $request){
+        $this->validate($request, ['id' => 'required|numeric']);
+        $resto = Resto::find($request->id);
+        
+        return response()->json($resto, 200);
+    }
 
     public function storeReviews(Request $request) {
 
