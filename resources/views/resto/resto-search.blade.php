@@ -11,7 +11,8 @@
         <div class="row">
     @endif
 
-    <div class="panel panel-default col-md-4 col-xs-12">
+    <div class="col-md-4 col-xs-12">
+    <div class="panel panel-default">
         <div class="panel-heading"><a href="{{url('/resto_info/'.$resto->id)}}">{{ $resto->name }}</a></div>
         <div class="panel-body">
             {{-- Image --}}
@@ -48,6 +49,7 @@
             </ul>
 
         </div>
+    </div>
     </div>
 
     @if($loop->index % 3 === 2)
