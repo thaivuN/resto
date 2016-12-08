@@ -75,7 +75,3 @@
 @yield('page-content')
 
 @endsection
-
-@section('js')
-@yield('js')
-@endsection

@@ -70,8 +70,3 @@
 @endif
 </div>
 @endsection
-
-@section('js')
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
-@endsection
