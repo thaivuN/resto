@@ -21,15 +21,15 @@
         <div class="panel-body">
             {{-- general info --}}
 
-            <ul class="list-inline add-separator">
-                <li>
+            
+                <div class="col-md-4">
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
-                </li>
+                </div>
 
-                <li class="color-yellow">
+                <div class="col-md-4 stars">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -44,13 +44,12 @@
                     @endfor
                     </div>
 
-                </li>
-                <li>
+                </div>
+                <div class="col-md-4">
                     {{-- Genre --}}
-                    $resto->genre->genre
-                </li>
-            </ul>
-
+                    {{$resto->genre->genre}}
+                </div>
+            
         </div>
     </div>
     </div>

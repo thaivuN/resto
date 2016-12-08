@@ -164,6 +164,11 @@ half:after {
     border-top:1px solid #444;
 }
 
-.color-yellow{
+.stars{
     color:#454545;
+    transition: color 2s;
+}
+
+.stars:hover{
+    color:#3B5998;
 }
