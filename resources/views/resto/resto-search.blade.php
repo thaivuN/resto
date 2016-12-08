@@ -25,7 +25,7 @@
             </a>
         </div>
 
-        <div class="panel-body separator" text-overflow: ellipsis;>
+        <div class="panel-body separator nopadding" text-overflow: ellipsis;>
             {{-- general info --}}
 
             
