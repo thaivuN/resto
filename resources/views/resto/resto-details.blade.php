@@ -14,9 +14,24 @@
 
     <div class="row">
     	<div class="col-md-6 col-xs-12">
+    		{{-- Panel starts here --}}
     		<div class="panel panel-default">
-    			<h3 class="panel-title">Details</h3>
+    			<h1 class="panel-title">Details</h1>
     		</div>
+
+    		<div class="panel-body image-container">
+            	{{-- Image --}}
+                @if(empty($resto->image_link))
+                    <img src="/images/bg.jpg">
+                @else
+                    <img src="{{$resto->image_link}}">
+                @endif
+
+                <h3>Address</h3>
+
+        	</div>
+
+
     	</div>
     </div>
 </div>
