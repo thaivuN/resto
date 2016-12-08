@@ -59,7 +59,7 @@
         </div>
 
         <div class="panel-footer text-center">
-            <p>{{$resto->postal_code}}</p>
+            <p>{{$resto->civic_num.", ".$resto->street}}</p>
         </div>
     </div>
     </div>
@@ -69,7 +69,6 @@
     @endif
 
 @endforeach
-{{ $paginator->links('resto.resto-search') }}
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
