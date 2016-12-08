@@ -83,7 +83,7 @@ class ApiController extends Controller {
                 'user_id' => $user->id]);
             $resto->reviews()->save($review);
 
-            return response()->json(['success' => 'The review was successfully created'], 201);
+            return response()->json(['success' => 'The review was successfully created'], 200);
         }
     }
 
@@ -175,7 +175,7 @@ class ApiController extends Controller {
             $resto->user_id = $user->id;
             $resto->save();
 
-            return response()->json(['success' => 'The restaurant was successfully created'], 201);
+            return response()->json(['success' => 'The restaurant was successfully created'], 200);
             
         }
     }
