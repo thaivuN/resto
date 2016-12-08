@@ -26,6 +26,11 @@ class ApiController extends Controller {
         $this->georepo = $georepo;
     }
 
+    /**
+     * Returning reviews of a restaurant based on its ID
+     * @param Request $request
+     * @return json response
+     */
     public function getReviews(Request $request) {
 
         $this->validate($request, ['id' => 'required|numeric']);
@@ -38,6 +43,11 @@ class ApiController extends Controller {
         return response()->json($reviews, 200);
     }
     
+    /**
+     * Returning the Resto model based on an id
+     * @param Request $request
+     * @return json response
+     */
     public function getRestoDetails(Request $request){
         $this->validate($request, ['id' => 'required|numeric']);
         $resto = Resto::find($request->id);
@@ -45,6 +55,12 @@ class ApiController extends Controller {
         return response()->json($resto, 200);
     }
 
+    /**
+     * Add a review of to restaurant based on its ID
+     * Need to pass an authenticable email and password
+     * @param Request $request
+     * @return json response
+     */
     public function storeReviews(Request $request) {
 
         $credentials = $request->only('email', 'password');
@@ -71,6 +87,12 @@ class ApiController extends Controller {
         }
     }
 
+    /**
+     * Returns the 10 nearest resto based on the user's latitude and longitude
+     * 
+     * @param Request $request
+     * @return json response
+     */
     public function getNearbyRestos(Request $request) {
         $this->validate($request, ['lat' => 'required|numeric', 'long' => 'required|numeric']);
 
@@ -79,6 +101,12 @@ class ApiController extends Controller {
         return response()->json($restos, 200);
     }
 
+    /**
+     * Add a restaurant.
+     * Need to pass an authenticable email and password
+     * @param Request $request
+     * @return json response
+     */
     public function registerResto(Request $request) {
 
         $credentials = $request->only('email', 'password');
