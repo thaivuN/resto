@@ -8,7 +8,7 @@
 @if(count($restos) > 0)
 @foreach($restos as $resto)    
     @if($loop->index % 3 === 0)
-        <div class="row"></div>
+        <div class="row">
     @endif
 
     <div class="panel panel-default col-md-4 col-xs-12">
