@@ -4,7 +4,7 @@
 */
 
 #index_body{
-    background-color: #FE7575;
+    background-color: #FF6961;
     height:100%;
 }
 
@@ -180,8 +180,13 @@ Follow me on Twitter @maridlcrmn
     border-right: #343434 solid 2px;
 }
 
-.header-custom,.header-custom:hover{
-    background-color:#AEC6CF;
+.header-custom, .header-custom:hover{
+    background-color:#779ECB;
     color:#fff;
-    text-decoration: none; 
+    text-decoration: none;
+    transition: background-color 0.5s 
+}
+
+.magnify:hover > a > div{
+    background-color: #ABCDEF;
 }
