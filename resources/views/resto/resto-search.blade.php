@@ -33,14 +33,7 @@
         <div class="panel-body separator nopadding" text-overflow: ellipsis;>
             {{-- general info --}}
 
-            
-                <div class="col-md-2 col-xs-12 text-center" >
-                    {{-- Pricing --}}
-                    @for($i = 0; $i < $resto->price; $i++)
-                        {{'$'}}
-                    @endfor
-                </div>
-
+                <!-- Rating -->
                 <div class="col-md-6 col-xs-12 stars text-center">
                     {{-- Rating --}}
                     <div class="rating">
@@ -56,9 +49,19 @@
                     </div>
 
                 </div>
+
+                <!-- Genre -->
                 <div class="col-md-4 col-xs-12 text-center">
                     {{-- Genre --}}
                     <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;">{{$resto->genre->genre}}</p>
+                </div>
+
+                <!-- Pricing -->
+                <div class="col-md-2 col-xs-12 text-center" >
+                    {{-- Pricing --}}
+                    @for($i = 0; $i < $resto->price; $i++)
+                        {{'$'}}
+                    @endfor
                 </div>
             
         </div>
