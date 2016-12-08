@@ -97,7 +97,7 @@ class GeoController extends Controller
         //return view('geo.search');
         //return view('geo.nearbyresto', ['restos' => $restos,]);
         //return view('geo.nearbyresto')->with('restos',$restos)->with("ratings",$ratings);
-        return view('resto.resto-search')->with('restos',$restos)->with("ratings",$ratings);
+        return view('geo.nearbyresto')->with('restos',$restos)->with("ratings",$ratings);
 
     }
     

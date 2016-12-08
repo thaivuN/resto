@@ -45,7 +45,10 @@
                     </div>
 
                 </li>
-                <li></li>
+                <li>
+                    {{-- Genre --}}
+                    $resto->genre->genre
+                </li>
             </ul>
 
         </div>
