@@ -112,44 +112,35 @@ class ApiController extends Controller {
                 return response()->json(['error' => 'Postal Code does not lead to a real location'], 422);
             }
 
-            $exists = DB::table('restos')->select("restos.*")->where('name', $request->name)
-                    ->where('latitude', $pairs['latitude'])
-                    ->where('longitude', $pairs['longitude'])->get();
-
-            if (count($exists) === 0){
-
-                //The resto is new
-                $resto = new Resto([
-                    'name' => $request->name,
-                    'latitude' => $pairs['latitude'],
-                    'longitude' => $pairs['longitude']
-                ]);
-                $resto->description = $request->description;
-                $resto->email = $request->resto_email;
-                $resto->phone = $request->phone;
-                $resto->civic_num = $request->civic_num;
-                $resto->price = $request->price;
-                if (is_numeric($request->suite)) {
-                    $resto->suite = $request->suite;
-                }
-                $resto->street = $request->street;
-                $resto->province = $request->province;
-                $resto->image_link = $request->image_link;
-                $resto->postal_code = $request->postal_code;
-                $resto->city = $request->city;
-                $resto->country = $request->country;
-                $resto->link = $request->link;
-                $genre = \App\Genre::firstOrCreate(['genre' => $request->genre]);
-                $resto->genre_id = $genre->id;
-                $user = User::where('email', $request->email)->first();
-                $resto->user_id = $user->id;
-                $resto->save();
-
-                return response()->json(['success' => 'The restaurant was successfully created'], 201);
+            
+            $resto = new Resto([
+                'name' => $request->name,
+                'latitude' => $pairs['latitude'],
+                'longitude' => $pairs['longitude']
+            ]);
+            $resto->description = $request->description;
+            $resto->email = $request->resto_email;
+            $resto->phone = $request->phone;
+            $resto->civic_num = $request->civic_num;
+            $resto->price = $request->price;
+            if (is_numeric($request->suite)) {
+                $resto->suite = $request->suite;
             }
-            else{
-                return response()->json(['error' => 'The restaurant already exists'], 422);
-            }
+            $resto->street = $request->street;
+            $resto->province = $request->province;
+            $resto->image_link = $request->img;
+            $resto->postal_code = $request->postal_code;
+            $resto->city = $request->city;
+            $resto->country = $request->country;
+            $resto->link = $request->link;
+            $genre = \App\Genre::firstOrCreate(['genre' => $request->genre]);
+            $resto->genre_id = $genre->id;
+            $user = User::where('email', $request->email)->first();
+            $resto->user_id = $user->id;
+            $resto->save();
+
+            return response()->json(['success' => 'The restaurant was successfully created'], 201);
+            
         }
     }
 
