@@ -28,7 +28,7 @@ class SearchController extends Controller
                 ->orWhere('city', 'like', '%'. $search.'%')
                 ->orWhere('genre', 'like', '%'.$search.'%')
                 ->select("restos.*")
-                ->paginate(5);
+                ->paginate(6);
      
         $ratings = null;
         foreach($restos as $resto){
