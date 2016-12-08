@@ -59,7 +59,7 @@
         </div>
 
         <div class="panel-footer text-center">
-            <p>{{$resto->postal}}</p>
+            <p>{{$resto->postal_code}}</p>
         </div>
     </div>
     </div>
