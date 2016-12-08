@@ -180,8 +180,12 @@ Follow me on Twitter @maridlcrmn
     border-right: #343434 solid 2px;
 }
 
-.header-custom,.header-custom:hover{
+.header-custom, .header-custom:hover{
     background-color:#AEC6CF;
     color:#fff;
     text-decoration: none; 
+}
+
+.magnify:hover > a > div{
+    background-color: #ABCDEF;
 }

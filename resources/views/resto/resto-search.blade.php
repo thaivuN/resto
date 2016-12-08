@@ -12,8 +12,9 @@
     @endif
 
     <div class="col-md-4 col-xs-12">
-    <div class="panel panel-default">
-        <a href="{{url('/resto_info/'.$resto->id)}}">
+    <div class="panel panel-default magnify">
+        {{-- I am sorry for inline css it just does not work normaly--}}
+        <a href="{{url('/resto_info/'.$resto->id)}}" style="text-decoration: none;">
             <div class="panel-heading text-center header-custom">
                 {{ $resto->name }}
             </div>
@@ -68,12 +69,15 @@
     </div>
     </div>
 
-    @if($loop->index % 3 === 2)
+    @if($loop->index % 3 === 2 || $loop->last)
         </div>
     @endif
 
 @endforeach
-{! $restos->render() !}
+{{-- Pagination --}}
+<div class="row text-center">
+    {!! $restos->render() !!}
+</div>
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
