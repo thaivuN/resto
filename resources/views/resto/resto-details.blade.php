@@ -16,7 +16,7 @@
     	<div class="col-md-6 col-xs-12">
     		{{-- Panel starts here --}}
     		<div class="panel panel-default">
-    			<h1 class="panel-title">Details</h1>
+    			<div class="panel-title">Details</div>
     		</div>
 
     		<div class="panel-body">
@@ -29,6 +29,9 @@
 
                 <h3>Address</h3>
 
+        	</div>
+        	<div class="panel-footer">
+        		
         	</div>
 
 
