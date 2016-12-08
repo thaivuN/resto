@@ -13,7 +13,11 @@
 
     <div class="col-md-4 col-xs-12">
     <div class="panel panel-default">
-        <div class="panel-heading"><a href="{{url('/resto_info/'.$resto->id)}}">{{ $resto->name }}</a></div>
+        <a href="{{url('/resto_info/'.$resto->id)}}">
+            <div class="panel-heading text-center">
+                {{ $resto->name }}
+            </div>
+        </a>
         <div class="panel-body image-container">
             {{-- Image --}}
             <a href="{{url('/resto_info/'.$resto->id)}}">
@@ -29,14 +33,14 @@
             {{-- general info --}}
 
             
-                <div class="col-md-3 col-xs-12 text-center" style="background-color: #b4d455; height: 100%;">
+                <div class="col-md-2 col-xs-12 text-center" >
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
                 </div>
 
-                <div class="col-md-6 col-xs-12 stars text-center" style="height: 100%;">
+                <div class="col-md-6 col-xs-12 stars text-center">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -51,7 +55,7 @@
                     </div>
 
                 </div>
-                <div class="col-md-3 col-xs-12 text-center" style="height: 100%;">
+                <div class="col-md-4 col-xs-12 text-center">
                     {{-- Genre --}}
                     <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;">{{$resto->genre->genre}}</p>
                 </div>
@@ -69,6 +73,7 @@
     @endif
 
 @endforeach
+{! $restos->render() !}
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
