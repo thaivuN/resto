@@ -4,7 +4,7 @@
 */
 
 #index_body{
-    background-color: #FF6961;
+    background-color:#fff /*#FF6961*/;
     height:100%;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .parent_index h1{
-    color:#FFF;
+    color:#222;
     font-size:50px;
 }
 .parent_index h1 span{
@@ -195,7 +195,7 @@ Follow me on Twitter @maridlcrmn
 
 .resto-name{
     border-bottom: 4px solid #FFC172;
-    color:#fff;
+    color:#222;
     display:inline-block;
     font-size: 50px;
     padding-left:1%;
