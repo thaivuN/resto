@@ -11,7 +11,7 @@
         <div class="row">
     @endif
 
-    <div class="col-md-4 col-xs-12">
+    <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="panel panel-default magnify">
         {{-- I am sorry for inline css it just does not work normaly--}}
         <a href="{{url('/resto_info/'.$resto->id)}}" style="text-decoration: none;">
