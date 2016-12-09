@@ -94,10 +94,9 @@
     			<div class="panel-body">
     				<form class="form-vertical" role="form" method="POST" action="{{ url('/resto/review/store/'.$resto->id) }}">
                         {{ csrf_field() }}
-                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Review Header</label>
+                        <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
+                            <label for="title" class="control-label">Title</label>
 
-                            <div class="col-md-6">
                                 <input id="title" type="text" class="form-control" name="title" value="{{old('title')}}" >
 
                                 @if ($errors->has('title'))
@@ -105,13 +104,11 @@
                                     <strong>{{ $errors->first('title') }}</strong>
                                 </span>
                                 @endif
-                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-                            <label for="content" class="col-md-4 control-label">Content</label>
+                            <label for="content" class="control-label">Content</label>
 
-                            <div class="col-md-6">
                                 <textarea id="content" type="text" class="form-control" name="content" value="{{old('content')}}" ></textarea>
 
                                 @if ($errors->has('content'))
@@ -119,13 +116,11 @@
                                     <strong>{{ $errors->first('content') }}</strong>
                                 </span>
                                 @endif
-                            </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('rating') ? ' has-error' : '' }}">
-                            <label for="rating" class="col-md-4 control-label">Rating</label>
+                            <label for="rating" class="control-label">Rating</label>
 
-                            <div class="col-md-6">
                                 <input id="rating" type="text" class="form-control" name="rating" value="{{old('rating')}}" min="1" max="5">
 
                                 @if ($errors->has('rating'))
@@ -133,13 +128,12 @@
                                     <strong>{{ $errors->first('rating') }}</strong>
                                 </span>
                                 @endif
-                            </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
+                            <div class="col-md-8 col-md-offset-7">
                                 <button type="submit" class="btn btn-primary">
-                                    Submit
+                                    Review
                                 </button>
 
                             </div>
