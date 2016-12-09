@@ -21,10 +21,6 @@
     			</div>
     		</div>
 
-            @if(Auth::check() && $resto->userCanEdit(Auth::user()))
-                <a href="{{url('/resto_update/'.$resto->id)}}" style="float:right" class="btn btn-link">Update</a>
-            @endif
-
     		<div class="panel-body" style="background-color:#F9F9F9;">
             	{{-- Image --}}
                 @if(empty($resto->image_link))
@@ -35,6 +31,10 @@
 
                 {{-- General Information --}}
                 <h3>Info</h3>
+                @if(Auth::check() && $resto->userCanEdit(Auth::user()))
+                    <a href="{{url('/resto_update/'.$resto->id)}}" style="float:right" class="btn btn-link">Update</a>
+                @endif
+
                 <h4>Description:</h4>
                 <p>{{$resto->description}}</p>
                 <p>
