@@ -176,7 +176,6 @@ class RestoController extends Controller {
      *  
      * @param Resto $resto
      * @param Request $request
-     * @param array $pairs
      */
     private function fillBasicRestoInfo(Resto $resto, Request $request) {
 
