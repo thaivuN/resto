@@ -50,18 +50,20 @@
 
                 </div>
 
-                <!-- Genre -->
+                <!-- distance -->
                 <div class="col-md-12 col-xs-12 text-center separators">
                     {{-- Distance --}}
-                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;margin-top: 5px;"> {{number_format($resto->distance, 1)}} km</p>
+                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;margin-top: 4px;"> {{number_format($resto->distance, 1)}} km</p>
                 </div>
 
                 <!-- Pricing -->
                 <div class="col-md-12 col-xs-12 text-center" >
                     {{-- Pricing --}}
+                    <b>
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
+                    </b>
                 </div>
             
         </div>
