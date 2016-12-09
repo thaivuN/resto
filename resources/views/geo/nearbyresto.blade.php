@@ -53,7 +53,7 @@
                 <!-- Genre -->
                 <div class="col-md-12 col-xs-12 text-center separators">
                     {{-- Distance --}}
-                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"> {{$resto->distance}}</p>
+                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;margin-top: 5px;"> {{number_format($resto->distance, 1)}} km</p>
                 </div>
 
                 <!-- Pricing -->
