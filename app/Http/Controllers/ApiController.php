@@ -40,6 +40,9 @@ class ApiController extends Controller {
         } else {
             $reviews = [];
         }
+        
+        
+        
         return response()->json($reviews, 200);
     }
 
@@ -50,7 +53,8 @@ class ApiController extends Controller {
      */
     public function getRestoDetails(Request $request) {
         $this->validate($request, ['id' => 'required|numeric']);
-        $resto = Resto::find($request->id);
+        $resto = Resto::join('genres', 'genres.id', '=', 'restos.genre_id')->select ('restos.*', 'genres.genre')->where("restos.id", $request->id)->first();
+        
 
         return response()->json($resto, 200);
     }
