@@ -106,15 +106,20 @@ class RestoController extends Controller {
      * @return view The restaurant's details page
      */
     public function save(Request $request, $id) {
+        $resto = Resto::find($id);
+        $user = Auth::user();
+        if (!$resto->userCanEdit($user)){
+            return redirect("/home");
+        }
+        
         $this->validateRequest($request);
-
         $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
 
         if ($this->validateLatitudeAndLongitude($pairs) == false) {
             return redirect()->back()->withInput()->withErrors(['postal_code' => 'The postal code is invalid']);
         }
 
-        $resto = Resto::find($id);
+        
         $resto->name = $request->name;
         $resto->latitude = $pairs['latitude'];
         $resto->longitude = $pairs['longitude'];
@@ -220,16 +225,4 @@ class RestoController extends Controller {
         }
     }
     
-    private function userCanUpdate($id){
-        $resto = Resto::find($id);
-        
-        if($resto->userCanEdit(Auth::user())){
-            return true;
-        }
-        
-        return false;
-        
-        
-    }
-
 }
