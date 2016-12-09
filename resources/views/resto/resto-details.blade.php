@@ -169,7 +169,7 @@
 						<hr>
 					@endforeach
 
-                    {!! $restos->render() !!}
+                    {!! $reviews->render() !!}
 				</div>
 
     		</div>
