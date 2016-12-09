@@ -43,9 +43,9 @@
                 {{-- Rating --}}
                 <div class="rating">
                 @for($i = 0 ; $i < 5 ; $i++)
-                    @if($ratings[$resto->id] - $i > 1)
+                    @if({{number_format($resto->ratings(),1)}} - $i > 1)
                         <i class="fa fa-star" aria-hidden="true"></i>
-                    @elseif($ratings[$resto->id] - $i <= 0)
+                    @elseif({{number_format($resto->ratings(),1)}} - $i <= 0)
                         <i class="fa fa-star-o" aria-hidden="true"></i>
                     @else                     
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
