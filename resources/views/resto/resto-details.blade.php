@@ -90,6 +90,7 @@
     				<h3 >Reviews</h3>
     			</div>
 
+    			@if(Auth::check())
     			{{-- Add Review --}}
     			<div class="panel-body">
     				<form class="form-vertical" role="form" method="POST" action="{{ url('/resto/review/store/'.$resto->id) }}">
@@ -118,6 +119,7 @@
                                 @endif
                         </div>
 
+                        {{-- If I will have time I will add a click even for the rating. --}}
                         <div class="form-group{{ $errors->has('rating') ? ' has-error' : '' }}">
                             <label for="rating" class="control-label">Rating</label>
 
@@ -140,6 +142,32 @@
                         </div>
                     </form>
     			</div>
+    			@endif
+
+				{{-- Other reviews --}}
+				<div class="panel-body">
+					@foreach($reviews as $review)
+						<div class="review-container">
+							<p><b>{{$review->title}}</b></p>
+							<p>{{$review->content}}</p>
+
+							<div class="rating stars">
+                			@for($i = 0 ; $i < 5 ; $i++)
+                    			@if(number_format($resto->ratings(),1) - $i > 1)
+                        			<i class="fa fa-star" aria-hidden="true"></i>
+                    			@elseif(number_format($resto->ratings(),1) - $i <= 0)
+                        			<i class="fa fa-star-o" aria-hidden="true"></i>
+                    			@else                     
+                        			<i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    			@endif
+                			@endfor
+                			</div>
+
+                			<p>By: {{$review->user->name}}</p>
+						</div>
+					@endforeach
+				</div>
+
     		</div>
     	</div>
     </div>
