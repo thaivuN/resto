@@ -83,14 +83,12 @@
                 </div>
             </div>
 
-            {{-- Button --}}
-            <div class="form-group margin-small" style="margin-top: 20px;">
-                <div class="col-md-8">
+                {{-- Button --}}
+                <div class="form-group" style="margin-top: 20px;">
                     <button type="submit" class="btn btn-warning">
                         Register
                     </button>
                 </div>
-            </div>
             </div>
         </form>
         </div>
