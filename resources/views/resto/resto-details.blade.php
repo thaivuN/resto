@@ -176,8 +176,8 @@
     	</div>
     </div>
 </div>
-<footer class="text-center">
+<div class="footer text-center footer-pretty">
 	<p>&copy; NullPointerExceptions - 2016</p>
-</footer>
+</div>
 
 @endsection
