@@ -34,6 +34,13 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
+                            <a href="{{url('/create') }}">Add a restaurant</a>
+                        </li>
+                        <li>
+                            <a href="{{url('/geo')}}">Find nearby restaurants</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
                             <a href="{{ url('/logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                 Logout
                             </a>
@@ -44,12 +51,6 @@
 
                         </li>
 
-                        <li>
-                            <a href="{{url('/create') }}">Add a restaurant</a>
-                        </li>
-                        <li>
-                            <a href="{{url('/geo')}}">Find nearby restaurants</a>
-                        </li>
                     </ul>
                 </li>
                 @endif
