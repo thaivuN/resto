@@ -83,7 +83,7 @@
                 @endif
 
                 @if(!empty($resto->link))
-                <a href="{{$resto->link}}">{{$resto->link}}</a>
+                <a href="{{$resto->link}}" style="white-space: nowrap;text-overflow: ellipsis;">{{$resto->link}}</a>
                 @endif
 
                 
