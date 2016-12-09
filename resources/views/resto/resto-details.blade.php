@@ -89,9 +89,17 @@
     			<div class="panel-title">
     				<h3>Reviews</h3>
     			</div>
+
+    			{{-- Add Review -- }}
+    			<div class="panel-body">
+    				
+    			</div>
     		</div>
     	</div>
     </div>
 </div>
+<footer class="text-center">
+	<p>&copy; NullPointerExceptions - 2016</p>
+</footer>
 
 @endsection
