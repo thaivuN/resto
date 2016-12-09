@@ -43,9 +43,9 @@
                 {{-- Rating --}}
                 <div class="rating">
                 @for($i = 0 ; $i < 5 ; $i++)
-                    @if({{number_format($resto->ratings(),1)}} - $i > 1)
+                    @if(number_format($resto->ratings(),1) - $i > 1)
                         <i class="fa fa-star" aria-hidden="true"></i>
-                    @elseif({{number_format($resto->ratings(),1)}} - $i <= 0)
+                    @elseif(number_format($resto->ratings(),1) - $i <= 0)
                         <i class="fa fa-star-o" aria-hidden="true"></i>
                     @else                     
                         <i class="fa fa-star-half-o" aria-hidden="true"></i>
@@ -65,6 +65,18 @@
     					Suite {{$resto->suite}}
     				@endif
                 </p>
+
+                {{-- Contact --}}
+                <h3>Contact</h3>
+                <p><i class="fa fa-phone" aria-hidden="true"></i> {{$resto->phone}}</p>
+
+                @if(!empty($resto->resto_email))
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> {{$resto->resto_email}}</p>
+                @endif
+
+                @if(!empty($resto->link))
+                <a href="{{$resto->link}}"></a>
+                @endif
 
         	</div>
         	<div class="panel-footer">
