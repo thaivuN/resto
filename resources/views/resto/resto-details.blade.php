@@ -78,7 +78,7 @@
                 <a href="{{$resto->link}}">{{$resto->link}}</a>
                 @endif
 
-                <a href="{{url('/resto_update/'.$resto->id)}}" style="float:right">Update</a>
+                <a href="{{url('/resto_update/'.$resto->id)}}" style="float:right" class="btn btn-link">Update</a>
         	</div>
 
     	</div>
