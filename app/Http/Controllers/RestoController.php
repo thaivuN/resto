@@ -216,5 +216,17 @@ class RestoController extends Controller {
             return true;
         }
     }
+    
+    private function userCanUpdate($id){
+        $resto = Resto::find($id);
+        
+        if($resto->userCanEdit(Auth::user())){
+            return true;
+        }
+        
+        return false;
+        
+        
+    }
 
 }
