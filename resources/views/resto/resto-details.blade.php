@@ -78,7 +78,7 @@
                 <a href="{{$resto->link}}">{{$resto->link}}</a>
                 @endif
 
-                <a href="{{url('/resto_update/'.$resto->id)}}" style="float:right" class="btn btn-link">Update</a>
+                <a href="{{url('/resto-update/'.$resto->id)}}" style="float:right" class="btn btn-link">Update</a>
         	</div>
 
     	</div>
@@ -177,7 +177,7 @@
     </div>
 </div>
 <div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px; margin-top: 20px;">
-	<p style="margin-top: 6px;">&copy; NullPointerExceptions - 2016</p>
+	<p style="margin-top: 14px;">&copy; NullPointerExceptions - 2016</p>
 </div>
 
 @endsection
