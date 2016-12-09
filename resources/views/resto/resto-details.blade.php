@@ -86,13 +86,65 @@
     	<div class="col-md-6 col-xs-12">
     		{{-- Panel starts here --}}
     		<div class="panel panel-info">
-    			<div class="panel-title">
-    				<h3>Reviews</h3>
+    			<div class="panel-title" style="margin-left: 3%">
+    				<h3 >Reviews</h3>
     			</div>
 
     			{{-- Add Review --}}
     			<div class="panel-body">
-    				
+    				<form class="form-horizontal" role="form" method="POST" action="{{ url('/resto/review/store/'.$resto->id) }}">
+                        {{ csrf_field() }}
+                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <label for="title" class="col-md-4 control-label">Review Header</label>
+
+                            <div class="col-md-6">
+                                <input id="title" type="text" class="form-control" name="title" value="{{old('title')}}" >
+
+                                @if ($errors->has('title'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('title') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
+                            <label for="content" class="col-md-4 control-label">Content</label>
+
+                            <div class="col-md-6">
+                                <textarea id="content" type="text" class="form-control" name="content" value="{{old('content')}}" ></textarea>
+
+                                @if ($errors->has('content'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('content') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('rating') ? ' has-error' : '' }}">
+                            <label for="rating" class="col-md-4 control-label">Rating</label>
+
+                            <div class="col-md-6">
+                                <input id="rating" type="text" class="form-control" name="rating" value="{{old('rating')}}" min="1" max="5">
+
+                                @if ($errors->has('rating'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('rating') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
     			</div>
     		</div>
     	</div>
