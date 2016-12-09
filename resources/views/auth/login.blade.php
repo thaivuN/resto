@@ -48,12 +48,12 @@
                 </div>
             </div>
 
-            <div class="form-group margin-small">
+            <div class="form-group">
                 <div class="col-md-8 text-center">
                     <button type="submit" class="btn btn-warning">
                         Login
                     </button>
-
+                    <br>
                     <a class="btn btn-link btn-color-white" href="{{ url('/password/reset') }}">
                         Forgot Your Password?
                     </a>
