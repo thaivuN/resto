@@ -92,7 +92,7 @@
 
     			{{-- Add Review --}}
     			<div class="panel-body">
-    				<form class="form-horizontal" role="form" method="POST" action="{{ url('/resto/review/store/'.$resto->id) }}">
+    				<form class="form-vertical" role="form" method="POST" action="{{ url('/resto/review/store/'.$resto->id) }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                             <label for="title" class="col-md-4 control-label">Review Header</label>
