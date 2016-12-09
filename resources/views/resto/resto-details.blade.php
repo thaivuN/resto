@@ -17,7 +17,7 @@
     		{{-- Panel starts here --}}
     		<div class="panel panel-info">
     			<div class="panel-title" style="margin-left: 3%">
-    				<h2>Details</h2>
+    				<h3>Details</h3>
     			</div>
     		</div>
 
@@ -41,7 +41,7 @@
                 </p>
 
                 {{-- Rating --}}
-                <div class="rating">
+                <div class="rating stars">
                 @for($i = 0 ; $i < 5 ; $i++)
                     @if(number_format($resto->ratings(),1) - $i > 1)
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
                 <h3>Address</h3>
                 <p>{{$resto->civic_num.' '.$resto->street}}</p>
                 <p>{{$resto->city}}, {{$resto->province}}</p>
-                <p>{{$resto->postal_country}}</p>
+                <p>{{$resto->country}}</p>
                 <p>
                 	{{$resto->postal_code}}
 
@@ -75,7 +75,7 @@
                 @endif
 
                 @if(!empty($resto->link))
-                <a href="{{$resto->link}}"></a>
+                <a href="{{$resto->link}}">{{$resto->link}}</a>
                 @endif
 
         	</div>
