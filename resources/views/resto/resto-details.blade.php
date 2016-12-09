@@ -188,8 +188,5 @@
     	</div>
     </div>
 </div>
-<div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px; margin-top: 20px;">
-	<p style="padding-top: 14px;">&copy; NullPointerExceptions - 2016</p>
-</div>
 
 @endsection
