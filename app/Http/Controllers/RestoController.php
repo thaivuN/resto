@@ -80,7 +80,7 @@ class RestoController extends Controller {
         $resto->user_id = Auth::id();
         $resto->save();
 
-        return view("home.index");
+        return redirect('/resto_info/' . $resto->id);
     }
 
     /**
