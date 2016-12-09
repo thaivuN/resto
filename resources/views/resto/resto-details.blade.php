@@ -153,9 +153,9 @@
 
 							<div class="rating stars">
                 			@for($i = 0 ; $i < 5 ; $i++)
-                    			@if(number_format($resto->ratings(),1) - $i > 1)
+                    			@if($review->rating - $i > 1)
                         			<i class="fa fa-star" aria-hidden="true"></i>
-                    			@elseif(number_format($resto->ratings(),1) - $i <= 0)
+                    			@elseif($review->rating - $i <= 0)
                         			<i class="fa fa-star-o" aria-hidden="true"></i>
                     			@else                     
                         			<i class="fa fa-star-half-o" aria-hidden="true"></i>
@@ -165,6 +165,7 @@
 
                 			<p>By: {{$review->user->name}}</p>
 						</div>
+						<hr>
 					@endforeach
 				</div>
 
