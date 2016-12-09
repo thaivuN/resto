@@ -90,7 +90,7 @@
     				<h3>Reviews</h3>
     			</div>
 
-    			{{-- Add Review -- }}
+    			{{-- Add Review --}}
     			<div class="panel-body">
     				
     			</div>
