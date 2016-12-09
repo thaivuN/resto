@@ -23,7 +23,7 @@ Route::get('/restos', "ApiController@getNearbyRestos");
 //GET for testing purpose
 Route::get("/resto/create", "ApiController@registerResto");
 //Route::get("/resto/reviews/create", "ApiController@storeReviews");
-Route::post("/review_create", "ApiCont@storeReviews");
+Route::post("review_create", "ApiCont@storeReviews");
 Route::post("/resto/create", "ApiController@registerResto");
 
 //Extra route at the request of the android team
