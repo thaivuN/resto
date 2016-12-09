@@ -3,10 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/H:/PHPcode/Projects/laravel/resto/resources/views/layouts/nav_normal.blade</file>
-            <file>file:/H:/PHPcode/Projects/laravel/resto/resources/views/home/index.blade.php</file>
-            <file>file:/H:/PHPcode/Projects/laravel/resto/resources/views/layouts/nav_index.blade.php</file>
-            <file>file:/H:/PHPcode/Projects/laravel/resto/public/css/custom.css</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/seeds/UsersTableSeeder.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/ApiController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/resources/views/resto/resto-update.blade.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/migrations/2014_10_12_000000_create_users_table.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/User.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/GeoController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/migrations/2016_11_24_153138_create_restos.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/seeds/RestosTableSeeder.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/Auth/LoginController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/seeds/DatabaseSeeder.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/RestoController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/Auth/RegisterController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/Auth/ForgotPasswordController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/seeds/GenresTableSeeder.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/migrations/2016_11_25_162533_edit_restos_table.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/Auth/ResetPasswordController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/routes/web.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/routes/api.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/resources/views/geo/storeresto.blade.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/database/seeds/ManualTableSeeder.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Http/Controllers/HomeController.php</file>
+            <file>file:/E:/PHPCode/Projects/laravel/resto/app/Resto.php</file>
         </group>
     </open-files>
 </project-private>
