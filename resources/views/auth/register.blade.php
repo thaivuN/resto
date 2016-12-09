@@ -71,20 +71,20 @@
             </div>
 
             {{-- Postal --}}
-            <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+            <div class="form-group {{ $errors->has('postal_code') ? ' has-error' : '' }}">
                 <div class="col-md-12">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email" value="{{ old('email') }}" required>
-                    @if ($errors->has('email'))
+                    <label for="email">Postal Code</label>
+                    <input type="text" class="form-control" id="postal_code" placeholder="Enter postal code" name="postal_code" value="{{ old('postal_code') }}" required>
+                    @if ($errors->has('psotal_code'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
+                            <strong>{{ $errors->first('postal_code') }}</strong>
                         </span>
                     @endif
                 </div>
             </div>
 
             {{-- Button --}}
-            <div class="form-group margin-small">
+            <div class="form-group margin-small" style="margin-top: 20px;">
                 <div class="col-md-8">
                     <button type="submit" class="btn btn-warning">
                         Register
