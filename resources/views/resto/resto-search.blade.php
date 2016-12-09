@@ -6,10 +6,13 @@
 <div class="container">
 
 @if(count($restos) > 0)
-@foreach($restos as $resto)    
+@foreach($restos as $resto)
+
+    <!--    
     @if($loop->index % 3 === 0)
         <div class="row">
     @endif
+    -->
 
     <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="panel panel-default magnify">
@@ -72,9 +75,11 @@
     </div>
     </div>
 
+    <!-- 
     @if($loop->index % 3 === 2 || $loop->last)
         </div>
     @endif
+    -->
 
 @endforeach
 {{-- Pagination --}}
