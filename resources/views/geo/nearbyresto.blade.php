@@ -31,10 +31,10 @@
         </div>
 
         <div class="panel-body separator nopadding" text-overflow: ellipsis;>
-            {{-- general info --}}
+                {{-- general info --}}
 
                 <!-- Rating -->
-                <div class="col-md-6 col-xs-12 stars text-center">
+                <div class="col-md-12 col-xs-12 stars text-center">
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
@@ -51,13 +51,13 @@
                 </div>
 
                 <!-- Genre -->
-                <div class="col-md-3 col-xs-12 text-center">
-                    {{-- Genre --}}
+                <div class="col-md-12 col-xs-12 text-center separators">
+                    {{-- Distance --}}
                     <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"> {{$resto->distance}}</p>
                 </div>
 
                 <!-- Pricing -->
-                <div class="col-md-3 col-xs-12 text-center" >
+                <div class="col-md-12 col-xs-12 text-center" >
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
