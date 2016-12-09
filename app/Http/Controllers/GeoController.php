@@ -95,8 +95,6 @@ class GeoController extends Controller {
        $paginatedRestos = $this->paginator->makePaginableCollection($restos, "geo", 6);
         
         return view('geo.nearbyresto')->with('restos', $paginatedRestos)->with("ratings", $ratings);
-    }
-
-       
+    }    
 
 }
