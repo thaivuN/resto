@@ -40,7 +40,7 @@
 
             <div class="form-group">
                 <div class="col-md-12 text-center" style="padding-top: 20px;">
-                    <button type="submit" class="btn btn-danger" style="padding-top: 20px;">
+                    <button type="submit" class="btn btn-danger">
                         Send Password Reset Link
                     </button>
                     <br>
