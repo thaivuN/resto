@@ -92,8 +92,11 @@ class RestoController extends Controller {
     public function update(Request $request, $id) {
         $resto = Resto::find($id);
         $user = User::find(Auth::id());
-        if ($resto->userCanEdit($user))
+        if ($resto->userCanEdit($user)) {
             return view('resto.resto-update')->with('resto', $resto);
+        } else {
+            return redirect('/home');
+        }
     }
 
     /**
