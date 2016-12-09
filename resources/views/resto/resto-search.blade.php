@@ -1,7 +1,10 @@
 @extends('layouts.nav')
 
-@section('page-content')
+@section('title')
+Search
+@endsection
 
+@section('page-content')
 
 <div class="container">
 
@@ -91,5 +94,9 @@
 @else
     <strong>We're sorry, we do not have any restos for you.</strong>
 @endif
+</div>
+
+<div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px; margin-top: 20px;">
+    <p style="padding-top: 14px;">&copy; NullPointerExceptions - 2016</p>
 </div>
 @endsection

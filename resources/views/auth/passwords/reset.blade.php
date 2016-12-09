@@ -1,5 +1,9 @@
 @extends('layouts.nav')
 
+@section('title')
+    Reset
+@endsection
+
 @section('page-content')
 <div class="container">
     <div class="row">

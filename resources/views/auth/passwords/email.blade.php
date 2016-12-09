@@ -1,5 +1,9 @@
 @extends('layouts.nav')
 
+@section('title')
+    Email
+@endsection
+
 <!-- Main Content -->
 @section('page-content')
 <div class="container">

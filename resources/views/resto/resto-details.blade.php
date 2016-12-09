@@ -1,5 +1,9 @@
 @extends('layouts.nav')
 
+@section('title')
+{{$resto->name}}
+@endsection
+
 @section('page-content')
 
 <div class="container">
@@ -176,7 +180,7 @@
                     {!! $reviews->render() !!}
 
                     @if(count($reviews) === 0)
-                        <p>There is no reviews for this restaurant yet. Be the first to rate it !</p>
+                        <p>There is no reviews for this restaurant yet. Be the first to rate it!</p>
                     @endif
 				</div>
 
@@ -185,7 +189,7 @@
     </div>
 </div>
 <div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px; margin-top: 20px;">
-	<p style="margin-top: 14px;">&copy; NullPointerExceptions - 2016</p>
+	<p style="padding-top: 14px;">&copy; NullPointerExceptions - 2016</p>
 </div>
 
 @endsection

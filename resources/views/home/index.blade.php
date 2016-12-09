@@ -1,5 +1,9 @@
 @extends('layouts.nav')
 
+@section('title')
+Welcome!
+@endsection
+
 @section('page-content')
 <div class="container parent_index">
     <div class="col-md-8">
@@ -39,8 +43,8 @@
         <img src="/images/logo_t.png" width="50%" height="50%;">
     </div>
 </div>
-@endsection
 
-@section('js')
-<script src="/js/geo.js"></script>
+<div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px; margin-top: 20px;">
+    <p style="padding-top: 14px;">&copy; NullPointerExceptions - 2016</p>
+</div>
 @endsection
