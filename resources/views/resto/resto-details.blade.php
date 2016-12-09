@@ -78,6 +78,7 @@
                 <a href="{{$resto->link}}">{{$resto->link}}</a>
                 @endif
 
+                <a href="{{url('/resto_update/'.$resto->id)}}" style="float:right">Update</a>
         	</div>
 
     	</div>
@@ -167,6 +168,8 @@
 						</div>
 						<hr>
 					@endforeach
+
+                    {!! $restos->render() !!}
 				</div>
 
     		</div>
