@@ -49,7 +49,7 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-8 text-center">
+                <div class="col-md-12 text-center">
                     <button type="submit" class="btn btn-warning">
                         Login
                     </button>
