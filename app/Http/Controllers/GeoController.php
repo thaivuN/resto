@@ -10,6 +10,10 @@ use App\Repositories\SearchRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
+
 /**
  * Controller used to handle the search of nearby restaurants
  * 
@@ -87,8 +91,34 @@ class GeoController extends Controller {
             $ratings[$resto->id] = $this->searcher->getAverageRating($resto);
         }
 
-        return view('geo.nearbyresto')->with('restos', $restos)->with("ratings", $ratings);
+       $paginatedRestos = $this->makePaginableResults($restos, "geo");
+        
+        return view('geo.nearbyresto')->with('restos', $paginatedRestos)->with("ratings", $ratings);
     }
+    
+    /**
+     * Method to paginate custom search query results.
+     *  Credit to psampaz
+     * http://psampaz.github.io/custom-data-pagination-with-laravel-5/
+     * 
+     * @param array $data
+     * @author psampaz
+     */
+    private function makePaginableResults($data, $path){
+        $currPage = LengthAwarePaginator::resolveCurrentPage();
+        //Convert the array of data into a laravel collection
+        $collection = new Collection($data);
+        $perPage = 6;
+        
+        //Slicing the results by the number of the results per page
+        $currentPageSearchResults = $collection->slice(($currPage -1 ) * $perPage, $perPage)->all();
+        //Paginated results
+        $paginatedSearchResults= new LengthAwarePaginator($currentPageSearchResults, count($collection), $perPage);
+        return $paginatedSearchResults->setPath($path);
+        
+    }
+    
+   
     
 
 }

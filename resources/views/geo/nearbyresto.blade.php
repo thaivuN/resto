@@ -53,7 +53,7 @@
                 <!-- Genre -->
                 <div class="col-md-4 col-xs-12 text-center">
                     {{-- Genre --}}
-                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;">{{$resto->genre->genre}}</p>
+                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"></p>
                 </div>
 
                 <!-- Pricing -->
