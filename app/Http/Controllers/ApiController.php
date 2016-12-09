@@ -14,7 +14,7 @@ use Validator;
 
 /**
  * RESTful API class
- * To be implemented later
+ * @author Thai-Vu Nguyen, Hau Gilles Che
  */
 class ApiController extends Controller {
 

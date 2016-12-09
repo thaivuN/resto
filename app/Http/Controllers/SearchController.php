@@ -7,6 +7,11 @@ use App\Resto;
 use App\Genre;
 use App\Repositories\SearchRepository;
 
+/**
+ * Controller handling searching actions and logic
+ * 
+ * @author Hau Gilles Che, Thai-Vu Nguyen
+ */
 class SearchController extends Controller
 {
     protected $searcher;
@@ -18,7 +23,7 @@ class SearchController extends Controller
     /**
      * Display search results
      *
-     * @return \Illuminate\Http\Response
+     * @return The view containg the search result
      */
     public function index(Request $request)
     {

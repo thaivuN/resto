@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Controller used to handle the search of nearby restaurants
  * 
- * @author Thai-Vu Nguyen
+ * @author Thai-Vu Nguyen, Hau Gilles Che
  */
 class GeoController extends Controller {
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Controller class responsible to handle actions concerning the Resto model.
  * 
- * @author Hau Gilles Che, Thai-Vu Ngueyn
+ * @author Hau Gilles Che, Thai-Vu Nguyen
  */
 
 class RestoController extends Controller {
