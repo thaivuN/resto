@@ -70,7 +70,7 @@ class ApiController extends Controller {
         $credentials = $request->only('email', 'password');
         //$credentials = ['email'=> $request->email, 'password' => $request->password];
         
-        var_dump($credentials);
+        //var_dump($credentials);
         //$temp = $request->all();
         //var_dump($temp);
         $valid = Auth::once($credentials);
