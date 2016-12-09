@@ -71,11 +71,12 @@ class ApiController extends Controller {
         $credentials = ['email'=> $request->email, 'password' => 
             $request->password];
         
+        var-dump($credentials);
         //$temp = $request->all();
         //var_dump($temp);
         $valid = Auth::once($credentials);
         if (!$valid) {
-            return response()->json(['error' => 'invalid_cr'], 401);
+            return response()->json(['error' => 'invalid_credentials'], 401);
         } else {
             $this->validate($request, ['id' => 'required|numeric|exists:restos,id',
                 'title' => 'required|max:255',
