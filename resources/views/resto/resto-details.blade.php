@@ -15,7 +15,7 @@
     <div class="row">
     	<div class="col-md-6 col-xs-12">
     		{{-- Panel starts here --}}
-    		<div class="panel panel-default">
+    		<div class="panel panel-info">
     			<div class="panel-title">Details</div>
     		</div>
 
@@ -27,7 +27,12 @@
                     <img src="{{$resto->image_link}}" width="100%" height="100%;">
                 @endif
 
+                {{-- Address --}}
                 <h3>Address</h3>
+                <p>{{$resto->civic_num.' '.$resto->street}}</p>
+                <p>{{$resto->city}}, {{$resto->province}}</p>
+                <p>{{$resto->postal_country}}</p>
+                <p>{{$resto->postal_code}}</p>
 
         	</div>
         	<div class="panel-footer">
