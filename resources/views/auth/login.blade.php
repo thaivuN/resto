@@ -3,14 +3,14 @@
 @section('page-content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
         <div class="text-center">
             <h2 class="custom-header">Login</h2>
         </div>
 
         <form role="form" method="POST" action="{{ url('/login') }}" class="custom-form col-md-8">
             {{ csrf_field() }}
-            <div class="col-md-8 col-md-offset-5">
+            <div class="col-md-10 col-md-offset-4">
             <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
                 <div class="col-md-12">
                     <label for="email">Email address</label>
@@ -49,7 +49,7 @@
             </div>
 
             <div class="form-group margin-small">
-                <div class="col-md-8">
+                <div class="col-md-8 text-center">
                     <button type="submit" class="btn btn-warning">
                         Login
                     </button>
