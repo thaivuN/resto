@@ -174,6 +174,10 @@
 					@endforeach
 
                     {!! $reviews->render() !!}
+
+                    @if(count($reviews) === 0)
+                        <p>There is no reviews for this restaurant yet. Be the first to rate it !</p>
+                    @endif
 				</div>
 
     		</div>
