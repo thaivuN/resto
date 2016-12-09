@@ -15,8 +15,8 @@
     <div class="row">
     	<div class="col-md-6 col-xs-12">
     		{{-- Panel starts here --}}
-    		<div class="panel panel-info">
-    			<div class="panel-title">
+    		<div class="panel panel-info details-style">
+    			<div class="panel-title" style="margin-left: 12%">
     				<h2>Details</h2>
     			</div>
     		</div>
@@ -36,7 +36,7 @@
                 <p>
                 	Pricing: 
 					@for($i = 0; $i < $resto->price; $i++)
-						{{'$'}}
+					{{'$'}}
 					@endfor
                 </p>
 
