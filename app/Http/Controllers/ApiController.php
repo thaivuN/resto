@@ -67,11 +67,11 @@ class ApiController extends Controller {
      */
     public function storeReviews(Request $request) {
 
-        $credentials = $request->only('email', 'password');
-        $temp = $request->only('email', 'password');
-        var_dump($temp);
-        $valid = Auth::once($credentials);
-        if (!$valid) {
+        //$credentials = $request->only('email', 'password');
+        //$temp = $request->only('email', 'password');
+        //var_dump($temp);
+        //$valid = ;
+        if (!Auth::once($request->only('email', 'password'))) {
             return response()->json(['error' => 'invalid_cr'], 401);
         } else {
             $this->validate($request, ['id' => 'required|numeric|exists:restos,id',
