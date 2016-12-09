@@ -54,7 +54,7 @@
                 </div>
 
                 <!-- Genre -->
-                <div class="col-md-12 col-xs-12 text-center separators">
+                <div class="col-md-12 col-xs-12 text-center separators" style=" margin-top: 5px;">
                     {{-- Genre --}}
                     <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;">{{$resto->genre->genre}}</p>
                 </div>
@@ -62,9 +62,11 @@
                 <!-- Pricing -->
                 <div class="col-md-12 col-xs-12 text-center" >
                     {{-- Pricing --}}
+                    <b style="margin-top: 5px;">
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
+                    </b>
                 </div>
             
         </div>
