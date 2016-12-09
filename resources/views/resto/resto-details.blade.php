@@ -15,8 +15,8 @@
     <div class="row">
     	<div class="col-md-6 col-xs-12">
     		{{-- Panel starts here --}}
-    		<div class="panel panel-info details-style">
-    			<div class="panel-title" style="margin-left: 12%">
+    		<div class="panel panel-info">
+    			<div class="panel-title" style="margin-left: 3%">
     				<h2>Details</h2>
     			</div>
     		</div>
@@ -39,6 +39,19 @@
 					{{'$'}}
 					@endfor
                 </p>
+
+                {{-- Rating --}}
+                <div class="rating">
+                @for($i = 0 ; $i < 5 ; $i++)
+                    @if($ratings[$resto->id] - $i > 1)
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    @elseif($ratings[$resto->id] - $i <= 0)
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    @else                     
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    @endif
+                @endfor
+                </div>
 
                 {{-- Address --}}
                 <h3>Address</h3>
