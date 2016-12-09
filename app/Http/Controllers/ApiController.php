@@ -69,7 +69,7 @@ class ApiController extends Controller {
 
         $credentials = $request->only('email', 'password');
         $temp = $request->only('email', 'password');
-        var_dump($request);
+        var_dump($temp);
         $valid = Auth::once($credentials);
         if (!$valid) {
             return response()->json(['error' => 'invalid_cr'], 401);
