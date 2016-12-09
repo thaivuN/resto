@@ -37,7 +37,7 @@ class RestoController extends Controller {
      */
     public function index(Request $request, $id) {
         $resto = Resto::find($id);
-        $reviews = $resto->reviews()->latest()->paginate(5);
+        $reviews = $resto->reviews()->latest()->paginate(3);
         return view('resto.resto-details')->with('resto', $resto)->with("reviews", $reviews);
     }
 
