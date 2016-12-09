@@ -172,7 +172,5 @@
     @endforeach
     {!! $reviews->render() !!}
 </div>
-
-
 @endsection
 
