@@ -5,10 +5,17 @@ namespace App\Repositories;
 use App\Resto;
 
 /**
- * Repository class
+ * Repository class handling the fetching of latitude and longitude from an address
+ * 
+ * @author Thai-Vu Nguyen
  */
 class GeoRepository {
 
+    /**
+     * Returns an array containing latitude and longitude keys
+     * @param string $address
+     * @return array
+     */
     public function GetGeocodingSearchResults($address) {
         $address = urlencode($address); //Url encode since it was provided by user
         $url = "http://maps.google.com/maps/api/geocode/xml?address={$address}&sensor=false";
