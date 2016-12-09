@@ -10,17 +10,6 @@
 @for($i = 0; $i < $resto->price; $i++)
 {{'$'}}
 @endfor
-<h3>description</h3>
-<p>{{$resto->description}}</p>
-<h3>Address</h3>
-<p>{{$resto->civic_num.' '.$resto->street}}
-    , {{$resto->city}}, {{$resto->province}}
-    <br/>{{$resto->country.' '.$resto->postal_code}}
-    <br/>
-    @if(!empty($resto->suite))
-    Suite {{$resto->suite}}
-    @endif
-</p>
 
 @if(!empty($resto->image_link))
 <p>Visit this page to see photos of the restaurant: {{$resto->image_link}}</p>
