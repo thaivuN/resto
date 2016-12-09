@@ -79,10 +79,17 @@
                 @endif
 
         	</div>
-        	<div class="panel-footer">
-        		
-        	</div>
 
+    	</div>
+
+    	{{-- Reviews column --}}
+    	<div class="col-md-6 col-xs-12">
+    		{{-- Panel starts here --}}
+    		<div class="panel panel-info">
+    			<div class="panel-title">
+    				<h3>Reviews</h3>
+    			</div>
+    		</div>
     	</div>
     </div>
 </div>
