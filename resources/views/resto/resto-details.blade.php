@@ -84,7 +84,7 @@
     	</div>
 
     	{{-- Reviews column --}}
-    	<div class="col-md-6 col-xs-12" style="overflow-y: scroll;overflow-x:hidden; max-height: 10;">
+    	<div class="col-md-6 col-xs-12">
     		{{-- Panel starts here --}}
     		<div class="panel panel-info">
     			<div class="panel-title" style="margin-left: 3%">
@@ -176,8 +176,8 @@
     	</div>
     </div>
 </div>
-<div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px;">
-	<p>&copy; NullPointerExceptions - 2016</p>
+<div class="footer text-center footer-pretty" style="background-color: #f49076;height: 30px; margin-top: 20px;">
+	<p style="margin-top: 5px;">&copy; NullPointerExceptions - 2016</p>
 </div>
 
 @endsection
