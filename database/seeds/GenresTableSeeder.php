@@ -21,5 +21,12 @@ class GenresTableSeeder extends Seeder
         Genre::create(['genre' => 'Mexican']);
         Genre::create(['genre' => 'Bar']);
         Genre::create(['genre' => 'Steakhouse']);
+        Genre::create(['genre' => 'Italian']);
+        Genre::create(['genre' => 'Chinese']);
+        Genre::create(['genre' => 'Buffet']);
+        Genre::create(['genre' => 'Diner']);
+        Genre::create(['genre' => 'Sea Food']);
+        
+        
     }
 }
