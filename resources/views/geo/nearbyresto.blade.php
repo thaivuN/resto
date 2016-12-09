@@ -51,13 +51,13 @@
                 </div>
 
                 <!-- Genre -->
-                <div class="col-md-4 col-xs-12 text-center">
+                <div class="col-md-3 col-xs-12 text-center">
                     {{-- Genre --}}
-                    <p style="max-width: 100%;max-height: 100%;white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"></p>
+                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"> {{$resto->distance}</p>
                 </div>
 
                 <!-- Pricing -->
-                <div class="col-md-2 col-xs-12 text-center" >
+                <div class="col-md-3 col-xs-12 text-center" >
                     {{-- Pricing --}}
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
