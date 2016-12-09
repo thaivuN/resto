@@ -3,7 +3,7 @@
 @section('page-content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
         <div class="text-center">
             <h2 class="custom-header">Register</h2>
         </div>
@@ -75,13 +75,23 @@
                 <div class="col-md-12">
                     <label for="email">Postal Code</label>
                     <input type="text" class="form-control" id="postal_code" placeholder="Enter postal code" name="postal_code" value="{{ old('postal_code') }}" required>
+
                     @if ($errors->has('psotal_code'))
                         <span class="help-block">
                             <strong>{{ $errors->first('postal_code') }}</strong>
                         </span>
                     @endif
+
+                    @if($errors->has('latitude') || $errors->has('longitude'))
+                        <small style="color:red;">
+                            You have a problem with your postal code.
+                        </small>
+                    @endif
+
                 </div>
             </div>
+
+
 
                 {{-- Button --}}
                 <div class="form-group" style="padding-top: 20px;">
