@@ -53,7 +53,7 @@
                 <!-- Genre -->
                 <div class="col-md-3 col-xs-12 text-center">
                     {{-- Genre --}}
-                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"> {{$resto->distance}</p>
+                    <p style="white-space: nowrap;text-overflow: ellipsis;overflow:hidden;"> {{$resto->distance}}</p>
                 </div>
 
                 <!-- Pricing -->
