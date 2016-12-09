@@ -12,7 +12,7 @@
 
 
             {{ csrf_field() }}
-            <div class="col-md-8 col-md-offset-5">
+            <div class="col-md-10 col-md-offset-5">
 
             {{-- Name --}}
             <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
@@ -84,10 +84,12 @@
             </div>
 
                 {{-- Button --}}
-                <div class="form-group" style="margin-top: 20px;">
+                <div class="form-group" style="padding-top: 20px;">
+                    <div class="col-md-12">
                     <button type="submit" class="btn btn-warning">
                         Register
                     </button>
+                    </div>
                 </div>
             </div>
         </form>
