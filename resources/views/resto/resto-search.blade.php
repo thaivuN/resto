@@ -62,7 +62,7 @@
                 <!-- Pricing -->
                 <div class="col-md-12 col-xs-12 text-center" >
                     {{-- Pricing --}}
-                    <b style="margin-top: 5px;">
+                    <b style="padding-top: 5px;">
                     @for($i = 0; $i < $resto->price; $i++)
                         {{'$'}}
                     @endfor
