@@ -83,7 +83,7 @@
     	</div>
 
     	{{-- Reviews column --}}
-    	<div class="col-md-6 col-xs-12" style="overflow-y: scroll; max-height: 100%">
+    	<div class="col-md-6 col-xs-12" style="overflow-y: scroll;overflow-x:hidden; max-height: 100%">
     		{{-- Panel starts here --}}
     		<div class="panel panel-info">
     			<div class="panel-title" style="margin-left: 3%">
