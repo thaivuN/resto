@@ -122,7 +122,7 @@
                             <label for="suite" class="col-md-4 control-label">Suite Number (if any)</label>
 
                             <div class="col-md-6">
-                                <input id="suite" type="number" class="form-control" name="suite" value="{{ $resto->suite}}" >
+                                <input id="suite" type="text" class="form-control" name="suite" value="{{ $resto->suite}}" >
 
                                 @if ($errors->has('suite'))
                                     <span class="help-block">

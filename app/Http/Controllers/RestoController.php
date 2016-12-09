@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Auth;
  * 
  * @author Hau Gilles Che, Thai-Vu Nguyen
  */
-
 class RestoController extends Controller {
 
     protected $georepo;
@@ -56,16 +55,16 @@ class RestoController extends Controller {
      * @param Request $request
      */
     public function store(Request $request) {
-        
+
         $this->validateRequest($request);
 
         $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
 
-        if ($this->validateLatitudeAndLongitude($pairs) == false){
+        if ($this->validateLatitudeAndLongitude($pairs) == false) {
             return redirect()->back()->withInput()->withErrors(['postal_code' => 'The postal code is invalid']);
         }
-        
-        if ($this->validateUniqueResto($request, $pairs) == false){
+
+        if ($this->validateUniqueResto($request, $pairs) == false) {
             return redirect()->back()->withInput()
                             ->withErrors(['address' => 'The Address already exists']);
         }
@@ -108,10 +107,10 @@ class RestoController extends Controller {
 
         $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
 
-        if ($this->validateLatitudeAndLongitude($pairs) == false){
+        if ($this->validateLatitudeAndLongitude($pairs) == false) {
             return redirect()->back()->withInput()->withErrors(['postal_code' => 'The postal code is invalid']);
         }
-        
+
         $resto = Resto::find($id);
         $resto->name = $request->name;
         $resto->latitude = $pairs['latitude'];
@@ -136,7 +135,7 @@ class RestoController extends Controller {
                     'phone' => 'required|max:255',
                     'civic_num' => 'required|numeric',
                     'street' => 'required|max:255',
-                    'suite' => 'present|numeric',
+                    'suite' => 'present|max:255',
                     'city' => 'required|max:255',
                     'country' => 'required|max:255',
                     'postal_code' => 'required|max:255',
@@ -184,12 +183,7 @@ class RestoController extends Controller {
         $resto->phone = $request->phone;
         $resto->civic_num = $request->civic_num;
         $resto->price = $request->price;
-        
-        //Numeric to be checked, else the framework will attempt to insert an empty string into an int column in the database
-        if (is_numeric($request->suite)) {
-            $resto->suite = $request->suite;
-        }
-        
+        $resto->suite = $request->suite;
         $resto->street = $request->street;
         $resto->province = $request->province;
         $resto->image_link = $request->image_link;
@@ -218,7 +212,7 @@ class RestoController extends Controller {
         //there is a non-0 count, the resto is not unique 
         if ($exists) {
             return false;
-        }{
+        } {
             return true;
         }
     }

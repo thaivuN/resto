@@ -40,9 +40,9 @@ class ApiController extends Controller {
         } else {
             $reviews = [];
         }
-        
-        
-        
+
+
+
         return response()->json($reviews, 200);
     }
 
@@ -53,8 +53,8 @@ class ApiController extends Controller {
      */
     public function getRestoDetails(Request $request) {
         $this->validate($request, ['id' => 'required|numeric']);
-        $resto = Resto::join('genres', 'genres.id', '=', 'restos.genre_id')->select ('restos.*', 'genres.genre')->where("restos.id", $request->id)->first();
-        
+        $resto = Resto::join('genres', 'genres.id', '=', 'restos.genre_id')->select('restos.*', 'genres.genre')->where("restos.id", $request->id)->first();
+
 
         return response()->json($resto, 200);
     }
@@ -138,9 +138,9 @@ class ApiController extends Controller {
             'latitude' => $pairs['latitude'],
             'longitude' => $pairs['longitude']
         ]);
-        
+
         $this->fillBasicRestoInfo($resto, $request);
-        
+
         $user = User::where('email', $request->email)->first();
         $resto->user_id = $user->id;
         $resto->save();
@@ -206,7 +206,7 @@ class ApiController extends Controller {
                     'phone' => 'present|max:255',
                     'civic_num' => 'required|numeric',
                     'street' => 'required|max:255',
-                    'suite' => 'present|numeric',
+                    'suite' => 'present|max:255',
                     'city' => 'required|max:255',
                     'country' => 'required|max:255',
                     'postal_code' => 'required|max:255',
@@ -216,7 +216,7 @@ class ApiController extends Controller {
                     'img' => 'present|url'
         ]);
     }
-    
+
     /**
      * Set the various basic fields of the Resto object (assuming the name, latitude and longitude is already in the Resto).
      * The method does not set the user_id nor does it save into the database.
@@ -231,9 +231,7 @@ class ApiController extends Controller {
         $resto->phone = $request->phone;
         $resto->civic_num = $request->civic_num;
         $resto->price = $request->price;
-        if (is_numeric($request->suite)) {
-            $resto->suite = $request->suite;
-        }
+        $resto->suite = $request->suite;
         $resto->street = $request->street;
         $resto->province = $request->province;
         $resto->image_link = $request->img;

@@ -16,7 +16,7 @@ class EditRestosTable extends Migration
         Schema::table('restos', function (Blueprint $table) {
             /*$table->integer('civic_num')->unsigned();
             $table->string('street');
-            $table->integer('suite')->unsigned()->nullable();
+            $table->string('suite')->nullable();
             $table->string('city');
             $table->string('country');
             $table->string('postal_code');
