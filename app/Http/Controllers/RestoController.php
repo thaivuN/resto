@@ -80,7 +80,7 @@ class RestoController extends Controller {
         $resto->user_id = Auth::id();
         $resto->save();
 
-        return redirect('/resto_info/' . $resto->$id);
+        return redirect('/resto_info/' . $resto->id);
     }
 
     /**
