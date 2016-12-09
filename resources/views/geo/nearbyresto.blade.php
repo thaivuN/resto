@@ -38,7 +38,7 @@
                     {{-- Rating --}}
                     <div class="rating">
                     @for($i = 0 ; $i < 5 ; $i++)
-                        @if($ratings[$resto->id] - $i > 1)
+                        @if($ratings[$resto->id] - $i >= 1)
                             <i class="fa fa-star" aria-hidden="true"></i>
                         @elseif($ratings[$resto->id] - $i <= 0)
                             <i class="fa fa-star-o" aria-hidden="true"></i>

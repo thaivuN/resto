@@ -43,7 +43,7 @@
                 {{-- Rating --}}
                 <div class="rating stars">
                 @for($i = 0 ; $i < 5 ; $i++)
-                    @if(number_format($resto->ratings(),1) - $i > 1)
+                    @if(number_format($resto->ratings(),1) - $i >= 1)
                         <i class="fa fa-star" aria-hidden="true"></i>
                     @elseif(number_format($resto->ratings(),1) - $i <= 0)
                         <i class="fa fa-star-o" aria-hidden="true"></i>
@@ -83,7 +83,7 @@
     	</div>
 
     	{{-- Reviews column --}}
-    	<div class="col-md-6 col-xs-12">
+    	<div class="col-md-6 col-xs-12" style="overflow-y: scroll; max-height: 100%">
     		{{-- Panel starts here --}}
     		<div class="panel panel-info">
     			<div class="panel-title" style="margin-left: 3%">
@@ -133,7 +133,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-7">
+                            <div class="col-md-8 col-md-offset-8">
                                 <button type="submit" class="btn btn-primary">
                                     Review
                                 </button>
@@ -153,7 +153,7 @@
 
 							<div class="rating stars">
                 			@for($i = 0 ; $i < 5 ; $i++)
-                    			@if($review->rating - $i > 1)
+                    			@if($review->rating - $i >= 1)
                         			<i class="fa fa-star" aria-hidden="true"></i>
                     			@elseif($review->rating - $i <= 0)
                         			<i class="fa fa-star-o" aria-hidden="true"></i>
