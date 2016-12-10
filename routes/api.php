@@ -18,13 +18,34 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:api');
 
 
+/**
+ * Retrives the reviews of a restaurant
+ */
 Route::get('/resto/reviews', "ApiController@getReviews");
+
+/**
+ * Retrieves the 10 nearest  restaurant based on latitude and longitude
+ */
 Route::get('/restos', "ApiController@getNearbyRestos");
-//GET for testing purpose
-Route::get("/resto/create", "ApiController@registerResto");
-//Route::get("/resto/reviews/create", "ApiController@storeReviews");
+
+/**
+ * Creates a restaurant
+ */
 Route::post('/resto/reviews/create', 'ApiController@storeReviews');
+
+/**
+ * Creates a review for a restaurant
+ */
 Route::post("/resto/create", "ApiController@registerResto");
 
+
 //Extra route at the request of the android team
+
+/**
+ * Retrieves the details of the restaurant
+ */
 Route::get("resto/details", "ApiController@getRestoDetails");
+/**
+ * Attempt to authenticate.
+ */
+Route::post("/userlogin", 'ApiController@authenticate');

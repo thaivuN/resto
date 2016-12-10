@@ -27,6 +27,25 @@ class ApiController extends Controller {
     }
 
     /**
+     * Validate an authentification attempt from the outside. 
+     * Does not create a session. It just tell you if your login attempt is valid
+     * 
+     * @param Request $request
+     * @return json response with a status code of 202 for correct authentification or 401 or invalid authentification
+     */
+    public function authenticate(Request $request){
+        $credentials = $request->only('email', 'password');
+        $valid = Auth::once($credentials);
+        
+        if (!$valid) {
+            return response()->json(['error' => 'invalid_credentials'], 401);
+        } else {
+            return response()->json(['auth' => 'valid_credentials'], 202);
+        }
+        
+    }
+    
+    /**
      * Returning reviews of a restaurant based on its ID
      * @param Request $request
      * @return json response
@@ -198,7 +217,7 @@ class ApiController extends Controller {
     }
 
     /**
-     * Validates the inputs from the Create/Update Restaurant form
+     * Validates the inputs from the Create Restaurant request
      * @param Request $request
      * @return type
      */
