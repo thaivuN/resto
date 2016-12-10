@@ -33,18 +33,52 @@ class ApiController extends Controller {
      * @param Request $request
      * @return json response with a status code of 202 for correct authentification or 401 or invalid authentification
      */
-    public function authenticate(Request $request){
+    public function authenticate(Request $request) {
         $credentials = $request->only('email', 'password');
         $valid = Auth::once($credentials);
-        
+
         if (!$valid) {
             return response()->json(['error' => 'invalid_credentials'], 401);
         } else {
             return response()->json(['auth' => 'valid_credentials'], 202);
         }
-        
     }
-    
+
+    /**
+     * Module used to register a user from outside the website.
+     * 
+     * 422 status code if the registration cannot be done because of invalid registration attempt
+     * 201 status code if the registration is sucessful
+     * 
+     * @param Request $request
+     * @return json response with a 422 code if registration attempt is invalid or 201 code if registration is successful 
+     */
+    public function register(Request $request) {
+        
+        
+        $this->validate($request, [
+            'name' => 'required|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            'postal_code' => 'required|max:255'
+            ]);
+        
+        $pairs = $this->georepo->GetGeocodingSearchResults($request->postal_code);
+        
+        if ($this->validateLatitudeAndLongitude($pairs) == false) {
+            return response()->json(['error' => 'Postal Code does not lead to a real location'], 422);
+        }
+        
+        User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => bcrypt($request->password),
+                    'postal_code' => $request->postal_code
+        ]);
+        
+        return response()->json(['registration' => 'user_created'], 201);
+    }
+
     /**
      * Returning reviews of a restaurant based on its ID
      * @param Request $request
@@ -88,7 +122,6 @@ class ApiController extends Controller {
 
         $credentials = $request->only('email', 'password');
         //$credentials = ['email'=> $request->email, 'password' => $request->password];
-        
         //var_dump($credentials);
         //$temp = $request->all();
         //var_dump($temp);

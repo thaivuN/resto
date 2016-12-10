@@ -49,3 +49,7 @@ Route::get("resto/details", "ApiController@getRestoDetails");
  * Attempt to authenticate.
  */
 Route::post("/userlogin", 'ApiController@authenticate');
+/**
+ * Attempt to register a user
+ */
+Route::post("/user_register", "ApiController@register");
