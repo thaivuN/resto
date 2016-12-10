@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Migration file for editing reviews table
+ * @author Hau Gilles Che
+ */
 class EditReviewsTable extends Migration
 {
     /**

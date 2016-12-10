@@ -6,7 +6,7 @@ use App\Genre;
 class GenresTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds for the genres table. 
      *
      * @return void
      */

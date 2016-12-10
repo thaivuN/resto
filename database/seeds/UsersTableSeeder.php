@@ -6,7 +6,7 @@ use App\User;
 class UsersTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds for the users table.
      *
      * @return void
      */

@@ -7,7 +7,7 @@ use App\Resto;
 class RestosTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeds for the restos table.
      *
      * @return void
      */

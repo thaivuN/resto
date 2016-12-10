@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Migration file for creating restos
+ * @author Hau Gilles Che
+ */
 class CreateRestos extends Migration
 {
      /**

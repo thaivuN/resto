@@ -15,6 +15,6 @@ class ManualTableSeeder extends Seeder
         $this->call("UsersTableSeeder");
         $this->call("GenresTableSeeder");
         $this->call("RestosTableSeeder");
-        
+        $this->call("ReviewsTableSeeder");
     }
 }

@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * Migration file for updating restos
+ * @author Hau Gilles Che
+ */
 class UpdateRestosTable extends Migration
 {
     /**
