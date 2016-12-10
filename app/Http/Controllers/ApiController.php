@@ -59,7 +59,7 @@ class ApiController extends Controller {
         $this->validate($request, [
             'name' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6',
             'postal_code' => 'required|max:255'
             ]);
         
